@@ -12,7 +12,7 @@ function AddBlog() {
     }, [])
 
     const fetchAll = () =>{
-        axios.get('http://localhost:3000/api')
+        axios.get('/api')
         .then((res) => {
             setListdata(res.data);
         })
@@ -46,7 +46,7 @@ function AddBlog() {
             blog : datas.blog
         };
 
-        axios.post('http://localhost:3000/api/savedata',payload)
+        axios.post('/api/savedata',payload)
         .then(res => {
             console.log('sent');
             fetchAll();

@@ -3,7 +3,7 @@ const testBlog = require('../models/testBlog');
 
 const router = express.Router();
 
-router.get('/api',(req,res) => {
+router.get('/',(req,res) => {
     testBlog.find({})
     .then((data) => { 
         // console.log('data',data);
@@ -15,7 +15,7 @@ router.get('/api',(req,res) => {
 
 });
 
-router.post('/api/savedata',(req,res) => {
+router.post('/savedata',(req,res) => {
 
     const data = req.body;
     const newTestblog = new testBlog(data);
