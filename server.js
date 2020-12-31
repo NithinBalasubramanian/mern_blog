@@ -8,7 +8,7 @@ const app = express();
 
 const route = require('./routes/api');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 //const MONGO_URL = 'mongodb+srv://nithinmigo:migonithin@cluster0.jtqoc.mongodb.net/<dbname>?retryWrites=true&w=majority';
 
