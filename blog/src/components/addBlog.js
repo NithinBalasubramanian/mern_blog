@@ -12,7 +12,7 @@ function AddBlog() {
     }, [])
 
     const fetchAll = () =>{
-        axios.get('http://localhost:5000/api')
+        axios.get('/api')
         .then((res) => {
             setListdata(res.data);
         })
