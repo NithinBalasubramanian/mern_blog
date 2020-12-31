@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
-const cors = require('cors');
+const cros = require('cros');
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended : false }));
 //Morgon used for developer logg on functionality 
 app.use(morgan('tiny'));
 
-app.use(cors());
+app.use(cros());
 
 app.use('/api',route);
 
