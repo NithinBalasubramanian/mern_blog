@@ -34,7 +34,9 @@ app.use(cors());
 
 app.use('/',route);
 
+console.log(process.env.NODE_ENV );
 if(process.env.NODE_ENV === 'production'){
+    console.log('production');
     app.use(express.static('blog/build'));
 }
 
