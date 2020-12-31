@@ -31,6 +31,8 @@ app.use(morgan('tiny'));
 
 app.use('/',route);
 
-app.use(express.static('blog/build'));
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('blog/build'));
+}
 
 app.listen(PORT,console.log(`Server started at port ${PORT}`))

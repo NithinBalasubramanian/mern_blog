@@ -3,26 +3,6 @@ const testBlog = require('../models/testBlog');
 
 const router = express.Router();
 
-
-router.get('',(req,res) => {
-    
-    const testData = {
-        title : 'just for test',
-        auther : 'Nithin'
-    }
-    
-    const newTestblog = new testBlog(testData);
-    
-    //save
-    newTestblog.save((error) => {
-        if(error){
-            console.log(error);
-        }else{
-            console.log('Saved successfully');
-        }
-    });
-});
-
 router.get('/api',(req,res) => {
     testBlog.find({})
     .then((data) => { 
