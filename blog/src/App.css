@@ -1,7 +1,64 @@
-h2{
-  text-align:center;
+h2,h2,h3,h4,h5,h6{
+  margin:0px;
+  padding:0px;
+}
+
+p{
+  margin:0px;
+  padding:0px;
 }
 
 .blogSubmit{
   float:right;
 }
+
+.header_main{
+  width:100%;
+  height:80px;
+  background-color:purple;
+}
+
+.logo_part{
+  width:80%;
+  margin:15px auto;
+  font-size:20px;
+  font-weight:400;
+  color:#fff;
+  overflow: hidden;
+}
+
+.menu{
+  width:80%;
+  margin:25px auto;
+}
+
+.menu ul{
+  list-style-type: none;
+}
+
+.menu ul li{
+  display:inline;
+  text-decoration:none;
+  color:#fff;
+  padding:10px 20px;
+  cursor:pointer;
+}
+
+.menu ul li a{
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+.menu ul li a:hover{
+  text-decoration:none;
+  color:rgb(128, 171, 236);
+}
+
+/* footer{
+  width:100%;
+  height:60px;
+  background-color: black;
+  position:sticky;
+  bottom:0px;
+} */
