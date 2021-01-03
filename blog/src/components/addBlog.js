@@ -12,7 +12,7 @@ function AddBlog() {
     }, [])
 
     const fetchAll = () =>{
-        axios.get('/api')
+        axios.get('http://localhost:8080/api')
         .then((res) => {
             setListdata(res.data);
         })
@@ -57,6 +57,20 @@ function AddBlog() {
         setDatas(initialState);
     }
 
+    const deleteHandler = (id) => {
+        if(window.confirm("Are You Sure ?")){
+            axios.delete('http://localhost:8080/api/deleteblog/'+id)
+            .then(res => {
+                console.log('Deleted');
+                fetchAll();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            setDatas(initialState);
+        }
+    }
+
     return (
         <div className="container">
             <h2 className="mt-5">Add Blog</h2>
@@ -81,6 +95,7 @@ function AddBlog() {
                             <th>Title</th>
                             <th>Auther</th>
                             <th>Blog</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,6 +106,7 @@ function AddBlog() {
                                 <td>{itm.title}</td>
                                 <td>{itm.auther}</td>
                                 <td>{itm.blog}</td>
+                                <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
                             </tr>
                         )
                     })}
