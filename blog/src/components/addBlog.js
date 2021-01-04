@@ -1,6 +1,6 @@
 import React , { useState , useEffect } from 'react';
 import '../App.css';
-import axios from 'axios';
+import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AddBlog() {
@@ -12,7 +12,7 @@ function AddBlog() {
     }, [])
 
     const fetchAll = () =>{
-        axios.get('http://localhost:8080/api')
+        axios.get('/')
         .then((res) => {
             setListdata(res.data);
         })
@@ -46,7 +46,7 @@ function AddBlog() {
             blog : datas.blog
         };
 
-        axios.post('/api/savedata',payload)
+        axios.post('savedata',payload)
         .then(res => {
             console.log('sent');
             fetchAll();
@@ -59,7 +59,7 @@ function AddBlog() {
 
     const deleteHandler = (id) => {
         if(window.confirm("Are You Sure ?")){
-            axios.delete('http://localhost:8080/api/deleteblog/'+id)
+            axios.delete('deleteblog/'+id)
             .then(res => {
                 console.log('Deleted');
                 fetchAll();

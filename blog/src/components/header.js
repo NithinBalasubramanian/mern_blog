@@ -6,7 +6,7 @@ function Header(){
     return(
         <div className="header_main">
             <div className="container">
-                <div class="row">
+                <div className="row">
                     <div className="col-md-6">
                         <div className="logo_part">
                             <h1>MERN BLOG</h1>

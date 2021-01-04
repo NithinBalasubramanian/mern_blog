@@ -27,6 +27,10 @@ p{
   overflow: hidden;
 }
 
+.logo_part h1{
+  font-size:20px;
+}
+
 .menu{
   width:80%;
   margin:25px auto;
