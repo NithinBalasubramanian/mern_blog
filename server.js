@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 8080;
 
 //const MONGO_URL = 'mongodb+srv://nithinmigo:migonithin@cluster0.jtqoc.mongodb.net/<dbname>?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://localhost/mern_1',{
+mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/mern_1',{
     useNewUrlParser : true,
     useUnifiedTopology : true
 });
