@@ -5,8 +5,9 @@ const testSchema =  new mongoose.Schema({
     url : String,
     auther : String,
     blog : String,
-    fileName : String,
-    filePath : String
+    imgUrl : String
+    // fileName : String,
+    // filePath : String
 });
 
 //model

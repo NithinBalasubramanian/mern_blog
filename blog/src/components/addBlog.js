@@ -2,7 +2,7 @@ import React , { useState , useEffect } from 'react';
 import '../App.css';
 import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function AddBlog() {
 
@@ -27,8 +27,9 @@ function AddBlog() {
         'url' : '',
         'auther' : '',
         'blog' : '',
-        'file':'',
-        'fileName' : ''
+        'imgUrl' : '',
+        // 'file':'',
+        // 'fileName' : ''
     }
 
     let [ datas , setDatas ] = useState(initialState);
@@ -60,9 +61,11 @@ function AddBlog() {
 
         const formdata = new FormData();
 
-        formdata.append('file',datas.file);
+        // formdata.append('file',datas.file);
 
         formdata.append('title',datas.title);
+
+        formdata.append('imgUrl',datas.imgUrl);
 
         formdata.append('url',datas.url);
 
@@ -76,6 +79,7 @@ function AddBlog() {
             }
         })
         .then(res=>{
+            fetchAll();
             setDatas(initialState);
         })
         .catch(err=>{
@@ -99,13 +103,10 @@ function AddBlog() {
         }
     }
 
-    const viewHandler = (url) => {
-    }
-
     return (
         <div className="container">
             <h2 className="mt-5">Add Blog</h2>
-            <form onSubmit={ onSubmitData } encType="multipart/form-data" > 
+            <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> Blog Title </label>
                     <input className="form-control" name="title" placeholder="Title" value={ datas.title } onChange={ onChangeHandler } />
@@ -116,17 +117,18 @@ function AddBlog() {
                 </div>
                  <div className="form-group">
                  <label>Image</label>
-                    <input type="file" className="form-control" name="fileName" value={ datas.fileName } onChange={ onChangeHandler } />
+                    <input className="form-control" name="imgUrl" placeholder="Enter Image Url" value={ datas.imgUrl } onChange={ onChangeHandler } />
+                    {/* <input type="file" className="form-control" name="fileName" value={ datas.fileName } onChange={ onChangeHandler } /> */}
                 </div>
                 <div className="form-group">
                 <label>Blog Contents</label>
-                    <textarea className="form-control" name="blog" placeholder="blog" value={ datas.blog } onChange={ onChangeHandler } >{datas.blog }</textarea>
+                    <textarea className="form-control" name="blog" rows="6" placeholder="blog" value={ datas.blog } onChange={ onChangeHandler } >{datas.blog }</textarea>
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
             <div className="mt-5">
                 <h2>List Blog Data</h2>
-                <table className="table table-bordered">
+                <table className="table table-bordered table-stripped">
                     <thead>
                         <tr>
                             <th>S.no</th>
@@ -144,9 +146,11 @@ function AddBlog() {
                                     <td>{k+1}</td>
                                     <td>{itm.title}</td>
                                     <td>{itm.auther}</td>
-                                    <td><img src={itm.filePath} alt="image" width="120px" height="80px"></img></td>
+                                    <td>
+                                        <img src={itm.imgUrl} alt="image" width="120px" height="80px"></img>
+                                    </td>
                                     <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
-                                    <td><NavLink to={'Blog/'+itm.url} className="btn btn-success btn-sm">View</NavLink></td>
+                                    <td><Link to={'Blog/'+itm.url} className="btn btn-success btn-sm">View</Link></td>
                                 </tr>
                         )
                     })}

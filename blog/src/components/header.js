@@ -17,8 +17,8 @@ function Header(){
                     <div className="col-md-6">
                         <div className="menu">
                             <ul>
-                                <li><NavLink to="AddBlog">Add Blog</NavLink></li>
-                                <li><NavLink to="Dashboard">Dashboard</NavLink></li>
+                                <li><NavLink to="/" exact activeClassName="navActive">Home</NavLink></li>
+                                <li><NavLink to="/AddBlog" exact activeClassName="navActive">Add Blog</NavLink></li>
                             </ul>
                         </div>
                     </div>
