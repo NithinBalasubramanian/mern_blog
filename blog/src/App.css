@@ -45,6 +45,10 @@ p{
   font-size:32px;
 }
 
+.main_menu h2{
+  padding:15px 0px;
+}
+
 .menu{
   width:80%;
   margin:25px auto;
