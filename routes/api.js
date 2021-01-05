@@ -30,7 +30,7 @@ router.post('/savedata',(req,res) => {
         if(err){
             return res.status(200).send(err);
         }else{
-            res.json(`${__dirname}/../blog/public/uploads/${file.name}1);
+            res.json(`${__dirname}/../blog/public/uploads/${file.name}`);
         }
     })
 
