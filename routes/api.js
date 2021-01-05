@@ -1,6 +1,5 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
-const multer = require('multer');
 const router = express.Router();
 
 router.get('/',(req,res) => {
