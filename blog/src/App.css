@@ -148,6 +148,10 @@ p{
   display:none;
 }
 
+.desk_none{
+  display:none;
+  }
+
 @media screen and (max-width : 700px){
   .mobile_none{
     display:none;
@@ -187,4 +191,9 @@ p{
     list-style:none;
     padding:5px 0px;
   }
+
+  .desk_none{
+  display:block;
+  }
+
 }

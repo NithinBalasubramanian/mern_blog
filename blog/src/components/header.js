@@ -21,7 +21,7 @@ function Header(){
                             <h1>MERN BLOG</h1>
                             {/* <img src="" alt="logo" height="100%" width="100%"></img> */}
                         </div>
-                        <BiMenuAltLeft onClick={ sidebarStatusHandler }  size="40px" color="#fff" style={{margin:"10px"}}/>
+                        <BiMenuAltLeft onClick={ sidebarStatusHandler }  className="desk_none" size="40px" color="#fff" style={{margin:"10px"}}/>
                     </div>
                     <div className="col-md-6 mobile_none">
                         <div className="menu">
