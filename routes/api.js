@@ -29,7 +29,7 @@ router.post('/savedata',(req,res) => {
    file.mv('/app/blog/public/uploads/`${file.name}`',err => {
         if(err){
             return res.status(200).send(err);
-        
+        }
     })
 
     const filePath = '/uploads/'+file.name;
