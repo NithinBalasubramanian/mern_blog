@@ -26,12 +26,10 @@ router.post('/savedata',(req,res) => {
 
     //const url = 'D:\\MERN\\mern_1\\';
     
-   file.mv(`/app/blog/public/uploads/${file.name}`,err => {
+   file.mv('/app/blog/public/uploads/`${file.name}`',err => {
         if(err){
             return res.status(200).send(err);
-        }else{
-            res.json(`${__dirname}/../blog/public/uploads/${file.name}`);
-        }
+        
     })
 
     const filePath = '/uploads/'+file.name;
