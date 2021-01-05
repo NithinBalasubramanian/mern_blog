@@ -26,6 +26,9 @@ router.post('/savedata',(req,res) => {
 
     //const url = 'D:\\MERN\\mern_1\\';
 
+    
+    res.json(__dirname);
+    
     file.mv(`/app/blog/public/uploads/${file.name}`,err => {
         if(err){
             return res.status(200).send(err);
