@@ -1,6 +1,6 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
-
+const multer = require('multer');
 const router = express.Router();
 
 router.get('/',(req,res) => {
@@ -16,31 +16,31 @@ router.get('/',(req,res) => {
 
 router.post('/savedata',(req,res) => {
 
-    if(req.files === null){
-        return res.status(400).json({msg:'No files found'});
-    }
+    // if(req.files === null){
+    //     return res.status(400).json({msg:'No files found'});
+    // }
 
     const data = req.body;
 
-    const file = req.files.file;
-
-    //const url = 'D:\\MERN\\mern_1\\';
+    // const file = req.files.file;
     
-   file.mv('/app/blog/public/uploads/`${file.name}`',err => {
-        if(err){
-            return res.status(200).send(err);
-        }
-    })
+    // file.mv(`${__dirname}/../blog/public/uploads/${file.name}`,err => {
+    //     if(err){
+    //         res.json("Error");
+    //         return res.status(200).send(err);
+    //     }
+    // })
 
-    const filePath = '/uploads/'+file.name;
+    // const filePath = '/uploads/'+file.name;
 
     const newTestblog = new testBlog({
         title : data.title,
         url : data.url,
         auther : data.auther,
         blog : data.blog,
-        fileName : file.name,
-        filePath : filePath
+        imgUrl : data.imgUrl,
+        // fileName : file.name,
+        // filePath : filePath
     });
     
     //save
