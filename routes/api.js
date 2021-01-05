@@ -25,11 +25,8 @@ router.post('/savedata',(req,res) => {
     const file = req.files.file;
 
     //const url = 'D:\\MERN\\mern_1\\';
-
     
-    res.json(__dirname);
-    
-    file.mv(`/app/blog/public/uploads/${file.name}`,err => {
+   file.mv(`https://mernblogdemo.herokuapp.com/uploads/${file.name}`,err => {
         if(err){
             return res.status(200).send(err);
         }
