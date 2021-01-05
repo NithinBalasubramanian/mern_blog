@@ -105,7 +105,7 @@ function AddBlog() {
 
     return (
         <div className="container">
-            <h2 className="mt-5">Add Blog</h2>
+            <h2 className="subHead">Add Blog</h2>
             <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> Blog Title </label>
@@ -128,6 +128,7 @@ function AddBlog() {
             </form>
             <div className="mt-5">
                 <h2>List Blog Data</h2>
+                <div className="table-responsive">
                 <table className="table table-bordered table-stripped">
                     <thead>
                         <tr>
@@ -156,6 +157,7 @@ function AddBlog() {
                     })}
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     )
