@@ -2,6 +2,7 @@ import React , { useState , useEffect } from 'react';
 import '../App.css';
 import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
 
 function AddBlog() {
 
@@ -23,8 +24,11 @@ function AddBlog() {
 
     let initialState = {
         'title' : '',
+        'url' : '',
         'auther' : '',
-        'blog' : ''
+        'blog' : '',
+        'file':'',
+        'fileName' : ''
     }
 
     let [ datas , setDatas ] = useState(initialState);
@@ -32,29 +36,53 @@ function AddBlog() {
     const onChangeHandler = (e) =>{
         let nowName = e.target.name;
         let nowValue = e.target.value;
-        setDatas(prevState => {
-            return {...prevState , [ nowName ] : nowValue }
-        });
+        if(nowName === 'fileName'){
+            setDatas(prevState => {
+                return {...prevState , 'file' : e.target.files[0] ,'fileName' : e.target.files[0].name }
+            });
+        }
+        if(nowName === 'title'){
+            let titleUrl = nowValue.toLowerCase().replace(/ /g, '-') 
+            .replace(/[^\w-]+/g, ''); 
+            setDatas(prevState => {
+                return {...prevState , [nowName] : nowValue ,'url' : titleUrl }
+            });
+        }
+        else{
+            setDatas(prevState => {
+                return {...prevState , [ nowName ] : nowValue }
+            });
+        }
     }
 
     const onSubmitData = (e) => {
         e.preventDefault();
 
-        let payload = {
-            title : datas.title,
-            auther : datas.auther,
-            blog : datas.blog
-        };
+        const formdata = new FormData();
 
-        axios.post('savedata',payload)
-        .then(res => {
-            console.log('sent');
-            fetchAll();
+        formdata.append('file',datas.file);
+
+        formdata.append('title',datas.title);
+
+        formdata.append('url',datas.url);
+
+        formdata.append('auther',datas.auther);
+
+        formdata.append('blog',datas.blog);
+
+        axios.post('savedata',formdata,{
+            headers : {
+                'Content-Type' : 'multipart/form-data'
+            }
         })
-        .catch(error => {
-            console.log(error);
+        .then(res=>{
+            setDatas(initialState);
         })
-        setDatas(initialState);
+        .catch(err=>{
+            console.log(err);
+        })
+        
+        e.preventDefault();
     }
 
     const deleteHandler = (id) => {
@@ -71,17 +99,27 @@ function AddBlog() {
         }
     }
 
+    const viewHandler = (url) => {
+    }
+
     return (
         <div className="container">
             <h2 className="mt-5">Add Blog</h2>
-            <form onSubmit={ onSubmitData } >
+            <form onSubmit={ onSubmitData } encType="multipart/form-data" > 
                 <div className="form-group">
-                    <input className="form-control" name="title" placeholder="title" value={ datas.title } onChange={ onChangeHandler } />
+                <label> Blog Title </label>
+                    <input className="form-control" name="title" placeholder="Title" value={ datas.title } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
-                    <input className="form-control" name="auther" placeholder="auther" value={ datas.auther } onChange={ onChangeHandler } />
+                <label>Auther</label>
+                    <input className="form-control" name="auther" placeholder="Auther" value={ datas.auther } onChange={ onChangeHandler } />
+                </div>
+                 <div className="form-group">
+                 <label>Image</label>
+                    <input type="file" className="form-control" name="fileName" value={ datas.fileName } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
+                <label>Blog Contents</label>
                     <textarea className="form-control" name="blog" placeholder="blog" value={ datas.blog } onChange={ onChangeHandler } >{datas.blog }</textarea>
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
@@ -94,20 +132,22 @@ function AddBlog() {
                             <th>S.no</th>
                             <th>Title</th>
                             <th>Auther</th>
-                            <th>Blog</th>
+                            <th>Image</th>
                             <th>Action</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tbody>
                     { Listdata.map((itm,k) => {
                         return(
-                            <tr>
-                                <td key={k}>{k+1}</td>
-                                <td>{itm.title}</td>
-                                <td>{itm.auther}</td>
-                                <td>{itm.blog}</td>
-                                <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
-                            </tr>
+                                <tr key={k}>
+                                    <td>{k+1}</td>
+                                    <td>{itm.title}</td>
+                                    <td>{itm.auther}</td>
+                                    <td><img src={itm.filePath} alt="image" width="120px" height="80px"></img></td>
+                                    <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
+                                    <td><NavLink to={'Blog/'+itm.url} className="btn btn-success btn-sm">View</NavLink></td>
+                                </tr>
                         )
                     })}
                     </tbody>

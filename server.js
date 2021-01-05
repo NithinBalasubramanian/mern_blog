@@ -1,4 +1,5 @@
 const express = require('express');
+const fileupload = require('express-fileupload');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
@@ -12,7 +13,7 @@ const PORT = process.env.PORT || 8080;
 
 //const MONGO_URL = 'mongodb+srv://nithinmigo:migonithin@cluster0.jtqoc.mongodb.net/<dbname>?retryWrites=true&w=majority';
 
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/mern_1',{
+mongoose.connect('mongodb://localhost/mern_1',{
     useNewUrlParser : true,
     useUnifiedTopology : true
 });
@@ -20,6 +21,8 @@ mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/mern_1',{
 mongoose.connection.on('connected',()=>{
     console.log('connected db');
 });
+
+app.use(fileupload());
 
 app.use(express.json());
 

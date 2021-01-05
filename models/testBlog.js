@@ -2,8 +2,11 @@ const mongoose = require('mongoose');
 
 const testSchema =  new mongoose.Schema({
     title : String,
+    url : String,
     auther : String,
-    blog : String
+    blog : String,
+    fileName : String,
+    filePath : String
 });
 
 //model

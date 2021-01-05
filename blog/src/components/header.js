@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
 
 function Header(){
     return(
@@ -16,8 +17,8 @@ function Header(){
                     <div className="col-md-6">
                         <div className="menu">
                             <ul>
-                                <li><a href="#">Add Blog</a></li>
-                                <li><a href="#">Dashboard</a></li>
+                                <li><NavLink to="AddBlog">Add Blog</NavLink></li>
+                                <li><NavLink to="Dashboard">Dashboard</NavLink></li>
                             </ul>
                         </div>
                     </div>

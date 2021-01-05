@@ -12,13 +12,36 @@ router.get('/',(req,res) => {
     .catch((error) => { 
         console.log('error',error);
     })
-
 });
 
 router.post('/savedata',(req,res) => {
 
+    if(req.files === null){
+        return res.status(400).json({msg:'No files found'});
+    }
+
     const data = req.body;
-    const newTestblog = new testBlog(data);
+
+    const file = req.files.file;
+
+    const url = 'D:\\MERN\\mern_1\\';
+
+    file.mv(`${url}/blog/public/uploads/${file.name}`,err => {
+        if(err){
+            return res.status(200).send(err);
+        }
+    })
+
+    const filePath = '/uploads/'+file.name;
+
+    const newTestblog = new testBlog({
+        title : data.title,
+        url : data.url,
+        auther : data.auther,
+        blog : data.blog,
+        fileName : file.name,
+        filePath : filePath
+    });
     
     //save
     newTestblog.save((error) => {
@@ -45,5 +68,15 @@ router.delete('/deleteblog/:id',(req,res) => {
         else "Error in Deleting";
     })
 });
+
+router.get('/view/:url',(req,res) => {
+    testBlog.find({ url : req.params.url })
+    .then((data) => { 
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
 
 module.exports = router;
