@@ -32,6 +32,8 @@ router.post('/savedata',(req,res) => {
         }
     })
 
+    console.log(__dirname);
+
     const filePath = '/uploads/'+file.name;
 
     const newTestblog = new testBlog({
