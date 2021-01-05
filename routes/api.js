@@ -29,6 +29,8 @@ router.post('/savedata',(req,res) => {
    file.mv(`${__dirname}/../blog/public/uploads/${file.name}`,err => {
         if(err){
             return res.status(200).send(err);
+        }else{
+            res.json(`${__dirname}/../blog/public/uploads/${file.name}1);
         }
     })
 
