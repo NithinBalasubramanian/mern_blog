@@ -26,7 +26,7 @@ function ViewBlog(){
 
     return(
         <div className="container">
-            <div class={ (loader) ? 'loading' : ''}>Loading&#8230;</div>
+            <div class={ (loader) ? 'loading' : ''}></div>
             <div className="row blogContent">
                 { datas.map((itm,k) => { 
                     return(
