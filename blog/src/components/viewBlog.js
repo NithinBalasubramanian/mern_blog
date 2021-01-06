@@ -7,6 +7,8 @@ function ViewBlog(){
 
     const [ datas , setDatas ] = useState([]);
 
+    const [ loader , setLoader ] = useState(true);
+
     useEffect(()=>{
         Fetchdata();
     }, [])
@@ -15,6 +17,7 @@ function ViewBlog(){
         axios.get('/view/'+url)
         .then( res => {
             setDatas(res.data);
+            setLoader(false);
         })
         .catch( err => {
             console.log(err);
@@ -23,6 +26,7 @@ function ViewBlog(){
 
     return(
         <div className="container">
+            <div class={ (loader) ? 'loading' : ''}>Loading&#8230;</div>
             <div className="row blogContent">
                 { datas.map((itm,k) => { 
                     return(
