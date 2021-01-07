@@ -78,4 +78,14 @@ router.get('/view/:url',(req,res) => {
     })
 })
 
+router.get('/recent/:url',(req,res) => {
+    testBlog.find({ url : { $ne : req.params.url  }})
+    .then((data) => { 
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
 module.exports = router;

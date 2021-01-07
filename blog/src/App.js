@@ -22,7 +22,7 @@ function App() {
           <Route path="/AddBlog" exact >
             <AddBlog />
           </Route>
-          <Route path="/Blog/:url" children={<ViewBlog />} >
+          <Route path="/Blog/:url" children={<ViewBlog />} exact>
           </Route>
         </Switch>
       </div>

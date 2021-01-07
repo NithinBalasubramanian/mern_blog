@@ -1,5 +1,6 @@
 import React , { useState , useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import axios from '../config/instance';
 
 function ViewBlog(){
@@ -7,11 +8,9 @@ function ViewBlog(){
 
     const [ datas , setDatas ] = useState([]);
 
-    const [ loader , setLoader ] = useState(true);
+    const [ recent , setRecent ] = useState([]);
 
-    useEffect(()=>{
-        Fetchdata();
-    }, [])
+    const [ loader , setLoader ] = useState(true);
 
     const Fetchdata = () => {
         axios.get('/view/'+url)
@@ -23,6 +22,21 @@ function ViewBlog(){
             console.log(err);
         })
     }
+
+    const FetchdataNot = () => {
+        axios.get('/recent/'+url)
+        .then( res => {
+            setRecent(res.data);
+        })
+        .catch( err => {
+            console.log(err);
+        })
+    }
+
+    useEffect(()=>{
+        Fetchdata();
+        FetchdataNot();
+    }, [url])
 
     return(
         <div className="container">
@@ -45,8 +59,15 @@ function ViewBlog(){
                         </>
                     )
                 }) }
-                <div className="col-md-4">
-                    <h3>Recent Blog</h3>
+                <div className="col-md-4 row recent">
+                    <h4>Recent Blog</h4>
+                    {recent.map((itm,k) => {
+                        return (
+                        <Link to={'/Blog/'+itm.url}  className="col-md-12 card"  >
+                            <h5>{itm.title}</h5>
+                        </Link>
+                        )
+                    })}
                 </div>
             </div>
         </div>

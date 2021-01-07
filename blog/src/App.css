@@ -273,6 +273,16 @@ p{
   }
 }
 
+.recent h4{
+  text-align:center;
+  color:purple;
+  margin-bottom:15px;
+}
+
+.card{
+  margin-bottom:15px;
+}
+
 @media screen and (max-width : 700px){
   .mobile_none{
     display:none;

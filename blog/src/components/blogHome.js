@@ -26,7 +26,7 @@ function BlogHome() {
             { Listdata.map((itm,k) => {
                 return(
                     <div className="col-md-4 card_col">
-                        <Link to={'Blog/'+itm.url} className="card">
+                        <Link to={'/Blog/'+itm.url} exact className="card">
                             <h4>{itm.title}</h4>
                             <p> - by {itm.auther}</p>
                         </Link>
