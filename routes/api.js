@@ -79,7 +79,7 @@ router.get('/view/:url',(req,res) => {
 })
 
 router.get('/recent/:url',(req,res) => {
-    testBlog.find({ url : { $ne : req.params.url  }})
+    testBlog.find({ url : { $ne : req.params.url  }}).limit(5)
     .then((data) => { 
         res.json(data);
     })

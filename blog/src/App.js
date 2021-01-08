@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import AddBlog from './components/addBlog';
+import ListBlog from './components/listBlog';
 import BlogHome from './components/blogHome';
 import Blog from './components/blog';
 import Footer from './components/footer';
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/AddBlog" exact >
             <AddBlog />
+          </Route>
+          <Route path="/ListBlog" exact >
+            <ListBlog />
           </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
           </Route>

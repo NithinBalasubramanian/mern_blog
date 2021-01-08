@@ -283,6 +283,33 @@ p{
   margin-bottom:15px;
 }
 
+.recent_part{
+  width:80%;
+  margin:0px auto;
+}
+
+.recent_part h5{
+  font-size:14px;
+  margin-top:10px;
+}
+
+.card_recent{
+  width:100%;
+  height:auto;
+  margin-bottom:5px;
+  padding:15px;
+  border-bottom:1px solid #EEEEEE;
+}
+
+.card_recent a{
+  text-decoration:none;
+}
+
+.card_recent a:hover{
+  text-decoration:none;
+  color:purple;
+}
+
 @media screen and (max-width : 700px){
   .mobile_none{
     display:none;

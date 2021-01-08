@@ -2,25 +2,8 @@ import React , { useState , useEffect } from 'react';
 import '../App.css';
 import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
 
 function AddBlog() {
-
-    let [ Listdata , setListdata ] = useState([]);
-
-    useEffect(() => {
-        fetchAll();
-    }, [])
-
-    const fetchAll = () =>{
-        axios.get('/')
-        .then((res) => {
-            setListdata(res.data);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }
 
     let initialState = {
         'title' : '',
@@ -43,10 +26,11 @@ function AddBlog() {
             });
         }
         if(nowName === 'title'){
+            let title = nowName;
             let titleUrl = nowValue.toLowerCase().replace(/ /g, '-') 
             .replace(/[^\w-]+/g, ''); 
             setDatas(prevState => {
-                return {...prevState , [nowName] : nowValue ,'url' : titleUrl }
+                return {...prevState , [nowName] : title ,'url' : titleUrl }
             });
         }
         else{
@@ -79,7 +63,6 @@ function AddBlog() {
             }
         })
         .then(res=>{
-            fetchAll();
             setDatas(initialState);
         })
         .catch(err=>{
@@ -87,20 +70,6 @@ function AddBlog() {
         })
         
         e.preventDefault();
-    }
-
-    const deleteHandler = (id) => {
-        if(window.confirm("Are You Sure ?")){
-            axios.delete('deleteblog/'+id)
-            .then(res => {
-                console.log('Deleted');
-                fetchAll();
-            })
-            .catch(error => {
-                console.log(error);
-            })
-            setDatas(initialState);
-        }
     }
 
     return (
@@ -126,39 +95,6 @@ function AddBlog() {
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
-            <div className="mt-5">
-                <h2>List Blog Data</h2>
-                <div className="table-responsive">
-                <table className="table table-bordered table-stripped">
-                    <thead>
-                        <tr>
-                            <th>S.no</th>
-                            <th>Title</th>
-                            <th>Auther</th>
-                            <th>Image</th>
-                            <th>Action</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    { Listdata.map((itm,k) => {
-                        return(
-                                <tr key={k}>
-                                    <td>{k+1}</td>
-                                    <td>{itm.title}</td>
-                                    <td>{itm.auther}</td>
-                                    <td>
-                                        <img src={itm.imgUrl} alt="Pic" width="120px" height="80px"></img>
-                                    </td>
-                                    <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
-                                    <td><Link to={'Blog/'+itm.url} className="btn btn-success btn-sm">View</Link></td>
-                                </tr>
-                        )
-                    })}
-                    </tbody>
-                </table>
-                </div>
-            </div>
         </div>
     )
 }
