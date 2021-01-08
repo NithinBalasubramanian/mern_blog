@@ -66,7 +66,7 @@ function ViewBlog(){
                             return (
                                 <div className="card_recent">
                                     <Link to={'/Blog/'+itm.url}  >
-                                        <img src={itm.imgUrl} width="100%" height="150px"></img>
+                                        <img src={itm.imgUrl} width="100%" height="150px" alt=""></img>
                                         <h5>{itm.title}</h5>
                                     </Link>
                                 </div>
