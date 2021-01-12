@@ -10,6 +10,7 @@ function ListBlog() {
 
     useEffect(() => {
         fetchAll();
+        document.title = "List Out Blog";
     }, [])
 
     const fetchAll = () =>{

@@ -1,4 +1,4 @@
-import React , { useState  } from 'react';
+import React , { useState , useEffect } from 'react';
 import '../App.css';
 import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,9 +11,14 @@ function AddBlog() {
         'auther' : '',
         'blog' : '',
         'imgUrl' : '',
+        'preheading':'',
         // 'file':'',
         // 'fileName' : ''
     }
+
+    useEffect(() => {
+        document.title = "Create Your Blog";
+    },[])
 
     let [ datas , setDatas ] = useState(initialState);
 
@@ -26,7 +31,7 @@ function AddBlog() {
             });
         }
         if(nowName === 'title'){
-            let title = nowName;
+            let title = nowValue;
             let titleUrl = nowValue.toLowerCase().replace(/ /g, '-') 
             .replace(/[^\w-]+/g, ''); 
             setDatas(prevState => {
@@ -57,6 +62,8 @@ function AddBlog() {
 
         formdata.append('blog',datas.blog);
 
+        formdata.append('preheading',datas.preheading);
+
         axios.post('savedata',formdata,{
             headers : {
                 'Content-Type' : 'multipart/form-data'
@@ -79,6 +86,10 @@ function AddBlog() {
                 <div className="form-group">
                 <label> Blog Title </label>
                     <input className="form-control" name="title" placeholder="Title" value={ datas.title } onChange={ onChangeHandler } />
+                </div>
+                <div className="form-group">
+                <label>Pre heading</label>
+                    <input className="form-control" name="preheading" placeholder="Enter Pre heading" value={ datas.preheading } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
                 <label>Auther</label>

@@ -8,6 +8,7 @@ function BlogHome() {
 
     useEffect(() => {
         fetchAll();
+        document.title = "MERN Blog";
     }, [])
 
     const fetchAll = () =>{
@@ -27,6 +28,7 @@ function BlogHome() {
                 return(
                     <div className="col-md-4 card_col">
                         <Link to={'/Blog/'+itm.url} exact className="card">
+                            <img src={itm.imgUrl} alt="img" width="100%" height="150px" /> 
                             <h4>{itm.title}</h4>
                             <p> - by {itm.auther}</p>
                         </Link>

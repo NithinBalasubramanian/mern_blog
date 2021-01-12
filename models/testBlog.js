@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
 
 const testSchema =  new mongoose.Schema({
-    title : String,
+    title : {
+        type : String,
+        required : true,
+        unique : true,
+    },
     url : String,
     auther : String,
     blog : String,
     imgUrl : String, 
+    preheading : String,
     createdOn : {
         type : Date,
         default : new Date(),

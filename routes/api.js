@@ -38,6 +38,7 @@ router.post('/savedata',(req,res) => {
         auther : data.auther,
         blog : data.blog,
         imgUrl : data.imgUrl,
+        preheading : data.preheading,
         // fileName : file.name,
         // filePath : filePath
     });

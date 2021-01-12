@@ -44,12 +44,16 @@ function ViewBlog(){
             <div class={ (loader) ? 'loading' : ''}></div>
             <div className="row blogContent">
                 { datas.map((itm,k) => { 
+                    document.title=itm.title;
                     return(
                         <>
                         <div className="col-md-12">
                             <h1>{itm.title}</h1>
                         </div>
                         <div className="col-md-8">
+                            <div className="preheading">
+                                <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.preheading}</p>
+                            </div>
                             <div className="byAuth">
                                 - by {itm.auther} 
                             <small>{moment(itm.createdOn).fromNow()}</small>
