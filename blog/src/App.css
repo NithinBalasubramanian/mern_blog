@@ -111,6 +111,13 @@ p{
   padding:20px 0px 10px 0px;
 }
 
+
+.byAuth small{
+  font-size:14px;
+  font-weight:600;
+  float:right;
+}
+
 .card{
   padding:20px;
   height:300px;

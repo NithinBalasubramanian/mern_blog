@@ -2,6 +2,7 @@ import React , { useState , useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import axios from '../config/instance';
+import moment from 'moment';
 
 function ViewBlog(){
     let {url} = useParams();
@@ -49,11 +50,13 @@ function ViewBlog(){
                             <h1>{itm.title}</h1>
                         </div>
                         <div className="col-md-8">
+                            <div className="byAuth">
+                                - by {itm.auther} 
+                            <small>{moment(itm.createdOn).fromNow()}</small>
+                            </div>
                             {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
                             <img src={itm.imgUrl} alt="img" width="100%" height="auto" /> 
-                            <div className="byAuth">
-                                - by {itm.auther}
-                            </div>
+                            
                             <p>{itm.blog}</p>
                         </div>
                         </>

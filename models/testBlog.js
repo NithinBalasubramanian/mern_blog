@@ -5,7 +5,11 @@ const testSchema =  new mongoose.Schema({
     url : String,
     auther : String,
     blog : String,
-    imgUrl : String
+    imgUrl : String, 
+    createdOn : {
+        type : Date,
+        default : new Date(),
+    }
     // fileName : String,
     // filePath : String
 });
