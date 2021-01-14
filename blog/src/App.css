@@ -124,6 +124,10 @@ p{
   border-radius:30px;
 }
 
+.disp_none{
+  display:none;
+}
+
 .card_col{
   margin:10px 0px;
 }

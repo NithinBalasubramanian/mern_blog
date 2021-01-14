@@ -62,7 +62,7 @@ function ListBlog() {
                                     <td>
                                         <img src={itm.imgUrl} alt="Pic" width="120px" height="80px"></img>
                                     </td>
-                                    <td><button className="btn btn-danger btn-sm" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
+                                    <td><button className="btn btn-danger btn-sm disp_none" onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
                                     <td><Link to={'Blog/'+itm.url} className="btn btn-success btn-sm">View</Link></td>
                                 </tr>
                         )
