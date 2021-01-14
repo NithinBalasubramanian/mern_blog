@@ -33,7 +33,7 @@ p{
 }
 
 .logo_part{
-  width:80%;
+  width:100%;
   margin:15px auto;
   font-size:20px;
   font-weight:400;
@@ -42,7 +42,8 @@ p{
 }
 
 .logo_part h1{
-  font-size:32px;
+  font-weight:300;
+  font-size:25px;
 }
 
 .main_menu h2{
@@ -51,7 +52,7 @@ p{
 
 .menu{
   width:80%;
-  margin:25px auto;
+  margin:20px auto;
 }
 
 .menu ul{
@@ -83,20 +84,21 @@ p{
 
 
 .blogContent{
-  padding:30px 10px;
+  padding:0px 10px;
 }
 
 .blogContent h1{
-  padding:15px 0px 25px 0px;
+  padding:10px 0px 20px 0px;
   font-family: 'Playfair Display', serif;
 }
 
 .blogContent p{
   padding:25px 0px;
+  color:#4d4752;
   text-indent:30px;
   text-align:justify;
   letter-spacing: 1px;
-  line-height: 26px;
+  line-height: 30px;
   font-size:18px;
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -106,15 +108,16 @@ p{
 }
 
 .byAuth{
-  font-size:14px;
-  font-weight:600;
-  padding:20px 0px 10px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  color:#afa7b5;
+  padding: 15px 0px 20px 0px;
 }
 
 
 .byAuth small{
-  font-size:14px;
-  font-weight:600;
+  font-size: 14px;
+  font-weight: 400;
   float:right;
 }
 
@@ -145,8 +148,9 @@ p{
 }
 
 .preheading p {
-  font-style:italic;
-  color:royalblue;
+  text-indent: 0px;
+  color: #61556b;
+  font-family: 'Playfair Display', serif;
 }
 
 footer{
@@ -296,9 +300,10 @@ footer p{
 }
 
 .recent h4{
-  text-align:center;
-  color:purple;
-  margin-bottom:15px;
+  text-align: center;
+  color: #9b8ea3;
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 
 .card{
@@ -308,11 +313,14 @@ footer p{
 .recent_part{
   width:80%;
   margin:0px auto;
+  padding:10px 0px;
 }
 
 .recent_part h5{
-  font-size:14px;
-  margin-top:10px;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #8e8396;
+  letter-spacing: 1px;
 }
 
 .card_recent{
@@ -357,6 +365,7 @@ footer p{
   }
   .blogContent h1{
     font-size:22px;
+    color:#333136;
     padding:0px 0px 10px 0px;
   }
   .blogContent p{
