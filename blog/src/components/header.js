@@ -28,7 +28,7 @@ function Header(){
                             <ul>
                                 <li><NavLink to="/" exact activeClassName="navActive">Home</NavLink></li>
                                 <li><NavLink to="/AddBlog" exact activeClassName="navActive">Add Blog</NavLink></li>
-                                <li><NavLink to="/ListBlog" exact activeClassName="navActive">List Blog</NavLink></li>
+                                {/* <li><NavLink to="/ListBlog" exact activeClassName="navActive">List Blog</NavLink></li> */}
                             </ul>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ function Header(){
                 <ul>
                     <li><NavLink to="/" exact activeClassName="navActive">Home</NavLink></li>
                     <li><NavLink to="/AddBlog" exact activeClassName="navActive">Add Blog</NavLink></li>
-                    <li><NavLink to="/ListBlog" exact activeClassName="navActive">List Blog</NavLink></li>
+                    {/* <li><NavLink to="/ListBlog" exact activeClassName="navActive">List Blog</NavLink></li> */}
                 </ul>
             </div>
         </div>
