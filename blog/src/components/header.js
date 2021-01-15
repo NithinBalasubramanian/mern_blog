@@ -14,7 +14,7 @@ function Header(){
 
     return(
         <div className="header_main">
-            <div className="container">
+            <div className="blog_container">
                 <div className="row">
                     <div className="col-md-6 flex">
                         <div className="logo_part">

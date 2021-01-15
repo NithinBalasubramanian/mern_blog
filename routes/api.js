@@ -3,7 +3,7 @@ const testBlog = require('../models/testBlog');
 const router = express.Router();
 
 router.get('/',(req,res) => {
-    testBlog.find({}).sort({title:-1})
+    testBlog.find({}).sort({createdOn:-1})
     .then((data) => { 
         // console.log('data',data);
         res.json(data);
@@ -80,7 +80,7 @@ router.get('/view/:url',(req,res) => {
 })
 
 router.get('/recent/:url',(req,res) => {
-    testBlog.find({ url : { $ne : req.params.url  }}).limit(5)
+    testBlog.find({ url : { $ne : req.params.url  }}).sort({createdOn:-1}).limit(5)
     .then((data) => { 
         res.json(data);
     })

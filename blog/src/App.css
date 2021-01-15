@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
 body{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Crimson Text', serif;
 }
 
 h2,h2,h3,h4,h5,h6{
@@ -25,7 +26,7 @@ p{
   height:auto;
   z-index:5;
   position:fixed;
-  background-color:purple;
+  background-color:#57545D;
 }
 
 .main_menu{
@@ -37,13 +38,15 @@ p{
   margin:15px auto;
   font-size:20px;
   font-weight:400;
-  color:#fff;
+  color:#eef0eb;
   overflow: hidden;
 }
 
 .logo_part h1{
-  font-weight:300;
-  font-size:25px;
+  font-weight:600;
+  font-size:23px;
+  margin:0px;
+  vertical-align: center;
 }
 
 .main_menu h2{
@@ -62,14 +65,14 @@ p{
 .menu ul li{
   display:inline;
   text-decoration:none;
-  color:#fff;
+  color:#eef0eb;
   padding:10px 20px;
   cursor:pointer;
 }
 
 .menu ul li a{
   text-decoration:none;
-  color:#fff;
+  color:#eef0eb;
   cursor:pointer;
 }
 
@@ -84,12 +87,13 @@ p{
 
 
 .blogContent{
-  padding:0px 10px;
+  padding:0px 0px;
 }
 
 .blogContent h1{
   padding:10px 0px 20px 0px;
   font-family: 'Playfair Display', serif;
+  color:#151F2D;
 }
 
 .blogContent p{
@@ -100,7 +104,7 @@ p{
   letter-spacing: 1px;
   line-height: 30px;
   font-size:18px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .form label{
@@ -125,6 +129,7 @@ p{
   padding:10px;
   height:400px;
   border-radius:30px;
+  background-color:#f7f7f5;
 }
 
 .disp_none{
@@ -155,15 +160,18 @@ p{
 
 footer{
   width:100%;
-  height:60px;
-  background-color: #646262;
+  height:auto;
+  background-color: #57545D;
   bottom:0px;
 }
 
 footer p{
   padding:10px;
+  margin:0px;
   text-align:center;
-  color:#fff;
+  color:#eef0eb;
+  font-size:14px;
+  letter-spacing: 2px;
 }
 
 .flex{
@@ -202,7 +210,7 @@ footer p{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: #eef0eb;
 }
 
 /* :not(:required) hides these rules from IE9 and below */
@@ -229,7 +237,7 @@ footer p{
   animation: spinner 1500ms infinite linear;
   border-radius: 0.5em;
   -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
-  box-shadow:  #fff 1.5em 0 0 0,  #fff 1.1em 1.1em 0 0, #fff 0 1.5em 0 0,  #fff -1.1em 1.1em 0 0,  #fff -1.5em 0 0 0, #fff -1.1em -1.1em 0 0, #fff 0 -1.5em 0 0, #fff 1.1em -1.1em 0 0;
+  box-shadow:  #57545D 1.5em 0 0 0,  #57545D 1.1em 1.1em 0 0, #57545D 0 1.5em 0 0,  #57545D -1.1em 1.1em 0 0,  #57545D -1.5em 0 0 0, #57545D -1.1em -1.1em 0 0, #57545D 0 -1.5em 0 0, #57545D 1.1em -1.1em 0 0;
 }
 
 /* Animation */
@@ -301,8 +309,9 @@ footer p{
 
 .recent h4{
   text-align: center;
-  color: #9b8ea3;
+  color: #8f9488;
   font-size: 16px;
+  font-weight:600;
   letter-spacing: 2px;
 }
 
@@ -311,24 +320,22 @@ footer p{
 }
 
 .recent_part{
-  width:80%;
-  margin:0px auto;
+  width:90%;
+  margin:0px 0px 0px auto;
   padding:10px 0px;
 }
 
 .recent_part h5{
   font-size: 12px;
   margin-top: 10px;
-  color: #8e8396;
+  color: #8f9488;
   letter-spacing: 1px;
 }
 
 .card_recent{
   width:100%;
   height:auto;
-  margin-bottom:5px;
   padding:15px;
-  border-bottom:1px solid #EEEEEE;
 }
 
 .card_recent a{
@@ -337,11 +344,17 @@ footer p{
 
 .card_recent a:hover{
   text-decoration:none;
-  color:purple;
+  color:#ffdd00;
 }
 
 .main_menu{
   min-height:800px;
+  background-color:#eef0eb;
+}
+
+.blog_container{
+  width:80%;
+  margin:0px auto;
 }
 
 @media screen and (max-width : 700px){
@@ -365,7 +378,7 @@ footer p{
   }
   .blogContent h1{
     font-size:22px;
-    color:#333136;
+    color:#2C2D4A;
     padding:0px 0px 10px 0px;
   }
   .blogContent p{
