@@ -87,7 +87,9 @@ p{
 
 
 .blogContent{
-  padding:0px 0px;
+  padding:0px 0px;    
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .blogContent h1{
@@ -125,12 +127,31 @@ p{
   float:right;
 }
 
-.card{
-  padding:10px;
-  height:400px;
-  border-radius:30px;
-  background-color:#f7f7f5;
+.card_home{
+  padding:0px;
+  height:auto;
+  background-color: #f7f9fa;
+  border-radius:5px;
+  overflow:hidden;
 }
+
+.card_home:hover{
+  background-color: #57545D;
+  color:#7e898f;
+}
+
+.card_home .byAuth{
+  padding:10px;
+}
+
+.card_home p{
+  padding:10px;
+  color:#afa7b5;
+  font-size: 14px;
+  font-weight: 400;
+  margin:0px;
+}
+
 
 .disp_none{
   display:none;
@@ -138,16 +159,19 @@ p{
 
 .card_col{
   margin:10px 0px;
+  padding:0px;
 }
 
-.card h4{
+.card_home h4{
   margin:10px 0px 0px 0px;
-  height:250px;
+  padding:15px;
+  height:150px;
   font-size:20px;
   line-height:26px;
+  color:#151F2D;
 }
 
-.card:hover{
+.card_home a:hover{
   text-decoration:none;
   color:purple;
 }
@@ -315,7 +339,7 @@ footer p{
   letter-spacing: 2px;
 }
 
-.card{
+.card_home{
   margin-bottom:15px;
 }
 
@@ -336,6 +360,12 @@ footer p{
   width:100%;
   height:auto;
   padding:15px;
+  margin-bottom:10px;
+}
+
+.card_recent:hover{
+  background-color: #57545D;
+  color:#eef0eb;
 }
 
 .card_recent a{
@@ -357,6 +387,20 @@ footer p{
   margin:0px auto;
 }
 
+@media screen and (max-width : 1300px){
+  .blog_container{
+    width:90%;
+    margin:0px auto;
+  }
+}
+
+@media screen and (max-width : 900px){
+  .blog_container{
+    width:95%;
+    margin:0px auto;
+  }
+}
+
 @media screen and (max-width : 700px){
   .mobile_none{
     display:none;
@@ -376,14 +420,34 @@ footer p{
   .main_menu{
     padding:70px 0px;
   }
+  .blogContent{
+    width:100%;
+  }
   .blogContent h1{
     font-size:22px;
     color:#2C2D4A;
     padding:0px 0px 10px 0px;
   }
   .blogContent p{
-    line-height: 23px;
-    font-size: 16px;
+    line-height: 20px;
+    font-size: 15px;
+  }
+  .byAuth{
+    font-size: 12px;
+    font-weight: 400;
+    color: #afa7b5;
+    padding: 10px 0px 15px 0px;
+  }
+  .byAuth small{
+    font-size: 12px;
+    font-weight: 400;
+    float: right;
+  }
+  .recent_part {
+    width: 90%;
+  }
+  footer p{
+    font-size:10px;
   }
   .mobileNav{
     width:100%;
