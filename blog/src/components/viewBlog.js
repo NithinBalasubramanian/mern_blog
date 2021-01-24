@@ -35,6 +35,7 @@ function ViewBlog(){
     }
 
     useEffect(()=>{
+        setLoader(true);
         Fetchdata();
         FetchdataNot();
     }, [url])
