@@ -10,7 +10,7 @@ function Footer(){
 
     return(
         <footer>
-            <p>{ Year }  || &copy; || All Right Reserved || MERN BLOG</p>
+            <p>{ Year } - &copy; || All Right Reserved || MERN BLOG</p>
         </footer>
     )
 }
