@@ -137,7 +137,7 @@ p{
 }
 
 .card_home:hover{
-  background-color: #57545D;
+  background-color: #e1eaf0;
   color:#7e898f;
 }
 
@@ -336,6 +336,7 @@ footer p{
   text-align: center;
   color: #8f9488;
   font-size: 16px;
+  margin-bottom:15px;
   font-weight:600;
   letter-spacing: 2px;
 }
@@ -365,8 +366,9 @@ footer p{
 }
 
 .card_recent:hover{
-  background-color: #57545D;
+  background-color: #e1eaf0;
   color:#eef0eb;
+  border-radius: 10px;
 }
 
 .card_recent a{
