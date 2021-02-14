@@ -1,5 +1,6 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
+const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
 router.get('/',(req,res) => {
@@ -88,5 +89,42 @@ router.get('/recent/:url',(req,res) => {
         console.log('error',error);
     })
 })
+
+router.get('/link',(req,res) => {
+    linkBlog.find({}).sort({createdOn:-1})
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
+router.post('/savelink',(req,res) => {
+
+    const data = req.body;
+
+    const newLinkblog = new linkBlog({
+        by : data.by,
+        content : data.content
+    });
+    
+    //save
+    newLinkblog.save((error) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.json("Saved successfully");
+        }
+    });
+});
+
+router.delete('/deletelink/:id',(req,res) => {
+    linkBlog.findByIdAndDelete(req.params.id,(err,docs) =>{
+        if(!err) res.send(docs);
+        else "Error in Deleting";
+    })
+});
 
 module.exports = router;
