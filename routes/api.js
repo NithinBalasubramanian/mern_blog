@@ -130,7 +130,7 @@ router.delete('/deletelink/:id',(req,res) => {
 //Api fetch for tech-Idiots ( Home Page )
 
 router.get('/homeFetch',(req,res) => {
-    testBlog.find({}).sort({createdOn:-1}).limit(25)
+    testBlog.find({}).sort({createdOn:-1}).limit(24)
     .then((data) => { 
         // console.log('data',data);
         res.json(data);
