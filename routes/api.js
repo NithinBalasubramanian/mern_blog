@@ -127,4 +127,17 @@ router.delete('/deletelink/:id',(req,res) => {
     })
 });
 
+//Api fetch for tech-Idiots ( Home Page )
+
+router.get('/homeFetch',(req,res) => {
+    testBlog.find({}).sort({createdOn:-1}).limit(25)
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+});
+
 module.exports = router;
