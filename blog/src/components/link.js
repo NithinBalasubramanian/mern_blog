@@ -82,7 +82,6 @@ function LinkBlog() {
     return (
         <div className="container">
             <h2 className="subHead">Write Here</h2>
-            <p>Inga chat panu idula ne by la v nu podu .idula nan login kondu vandura.indha link veliya katathu idula ne chat panu idula deletum iruku prachana ila.</p>
             <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> By </label>
