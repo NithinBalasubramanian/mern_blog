@@ -23,6 +23,10 @@ function ViewBlog(){
             console.log(err);
         })
     }
+    
+    const getDate = (date) => {
+     return date.split(' ',1)
+    }
 
     const FetchdataNot = () => {
         axios.get('/recent/'+url)
@@ -57,7 +61,7 @@ function ViewBlog(){
                             </div>
                             <div className="byAuth">
                                 - by {itm.auther} 
-                            <small>{moment(itm.createdOn).fromNow()}</small>
+                            <small>{ getDate(itm.createdOn) }</small>
                             </div>
                             {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
                             <img src={itm.imgUrl} alt="img" width="100%" height="auto" /> 
