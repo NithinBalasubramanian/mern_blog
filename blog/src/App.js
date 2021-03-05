@@ -30,6 +30,9 @@ function App() {
           <Route path="/Dubai" exact >
             <LinkBlog />
           </Route>
+     <Route path="/Link" exact >
+            <LinkBlog />
+          </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
           </Route>
         </Switch>
