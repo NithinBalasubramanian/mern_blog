@@ -64,7 +64,7 @@ function ViewBlog(){
                             <small>{ getDate(itm.createdOn) }</small>
                             </div>
                             {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
-                            <img src={itm.imgUrl} alt="img" width="100%" height="auto" /> 
+                            <img src={itm.imgUrl} alt={itm.title} width="100%" height="auto" /> 
                             
                             <p>{itm.blog}</p>
                         </div>
@@ -78,7 +78,7 @@ function ViewBlog(){
                             return (
                                 <div className="card_recent">
                                     <Link to={'/Blog/'+itm.url}  >
-                                        <img src={itm.imgUrl} width="100%" height="150px" alt=""></img>
+                                        <img src={itm.imgUrl} width="100%" height="150px" alt={itm.title}></img>
                                         <h5>{itm.title}</h5>
                                     </Link>
                                 </div>
