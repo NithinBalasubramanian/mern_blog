@@ -11,7 +11,7 @@ function BlogHome() {
 
     useEffect(() => {
         fetchAll();
-        document.title = "MERN Blog";
+        document.title = "MERN Blog - Blogging Application for tech news and intersting world news";
     }, [])
 
     const fetchAll = () =>{
