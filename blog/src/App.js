@@ -27,7 +27,7 @@ function App() {
           <Route path="/ListBlog" exact >
             <ListBlog />
           </Route>
-          <Route path="/link" exact >
+          <Route path="/Dubai" exact >
             <LinkBlog />
           </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
