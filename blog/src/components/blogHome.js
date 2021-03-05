@@ -7,6 +7,8 @@ function BlogHome() {
 
     let [ Listdata , setListdata ] = useState([]);
 
+    const [ loader , setLoader ] = useState(true);
+
     useEffect(() => {
         fetchAll();
         document.title = "MERN Blog";
@@ -16,6 +18,7 @@ function BlogHome() {
         axios.get('/')
         .then((res) => {
             setListdata(res.data);
+            setLoader(false);
         })
         .catch((error) => {
             console.log(error);
@@ -24,6 +27,7 @@ function BlogHome() {
 
     return (
         <div className="container">
+         <div class={ (loader) ? 'loading' : ''}></div>
             <div className="row blogListOut">
             { Listdata.map((itm,k) => {
                 if(k === 0 || k === 1){
