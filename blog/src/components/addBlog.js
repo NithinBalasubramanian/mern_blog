@@ -40,12 +40,12 @@ function AddBlog() {
             });
         }
         else if(nowName === 'subPara'){
-            let subpara_cont  = [ ...data.subpara ];
+            let subpara_cont  = [ ...datas.subpara ];
             
-            subpara_Cont.push = e.target.value;
+            subpara_cont.push = e.target.value;
             
             setDatas(prevState => {
-                return {...prevState , [nowName] : subpara_Cont }
+                return {...prevState , [nowName] : subpara_cont }
             });
         }
         else{
@@ -58,7 +58,7 @@ function AddBlog() {
     const onSubmitData = (e) => {
         e.preventDefault();
         
-        console.log(data);
+        console.log(datas);
 
         const formdata = new FormData();
 
