@@ -149,12 +149,21 @@ p{
   padding:10px 0px;
 }
 
-.contentDisp p{
+.contentDisp .mainCont{
   padding:5px;
   color:#afa7b5;
   font-size: 14px;
   font-weight: 400;
   margin:0px;
+}
+
+.contentDisp .subCont{
+  padding:5px;
+  color:#afa7b5;
+  font-size: 14px;
+  font-weight: 400;
+  margin:0px;
+  text-indent:0px;
 }
 
 
