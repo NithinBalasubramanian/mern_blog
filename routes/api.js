@@ -45,8 +45,6 @@ router.post('/savedata',(req,res) => {
         // filePath : filePath
     });
     
-    res.json(newTestblog);
-    
     //save
     newTestblog.save((error) => {
         if(error){
