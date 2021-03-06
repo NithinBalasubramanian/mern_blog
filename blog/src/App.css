@@ -174,7 +174,8 @@ p{
 
 .card_home .frontSubCont{
   padding:15px;
-  font-size:10px;
+  font-size:14px;
+  letter-spacing:1px;
   height:auto;
   color:#b3bbbd;
 }
