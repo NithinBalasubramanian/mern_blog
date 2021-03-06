@@ -45,14 +45,16 @@ router.post('/savedata',(req,res) => {
         // filePath : filePath
     });
     
+    res.json(newTestblog);
+    
     //save
-    newTestblog.save((error) => {
-        if(error){
-            console.log(error);
-        }else{
-            res.json("Saved successfully");
-        }
-    });
+//     newTestblog.save((error) => {
+//         if(error){
+//             console.log(error);
+//         }else{
+//             res.json("Saved successfully");
+//         }
+//     });
 });
 
 router.put('/updateblog/:id',(req,res) => {
