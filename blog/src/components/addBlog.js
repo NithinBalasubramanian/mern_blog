@@ -18,6 +18,7 @@ function AddBlog() {
     }
 
     useEffect(() => {
+        console.log(initialState);
         document.title = "Create Your Own Blog or News";
     },[])
 
