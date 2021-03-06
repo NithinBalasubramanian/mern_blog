@@ -98,10 +98,25 @@ p{
   color:#151F2D;
 }
 
-.blogContent p{
+.contentDisp{
+  padding:10px 0px;
+}
+
+.blogContent .paraMainPara{
   padding:25px 0px;
   color:#4d4752;
   text-indent:30px;
+  text-align:justify;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-size:18px;
+  font-family: 'Crimson Text', serif;
+}
+
+.blogContent .paraSubPara{
+  padding:25px 0px;
+  color:#4d4752;
+  text-indent:0px;
   text-align:justify;
   letter-spacing: 1px;
   line-height: 30px;
@@ -145,27 +160,14 @@ p{
   padding:10px;
 }
 
-.contentDisp{
-  padding:10px 0px;
-}
 
-.contentDisp .paraMainCont{
+.card_home p{
   padding:5px;
   color:#afa7b5;
   font-size: 14px;
   font-weight: 400;
   margin:0px;
 }
-
-.contentDisp .paraSubCont{
-  padding:5px;
-  color:#afa7b5;
-  font-size: 14px;
-  font-weight: 400;
-  margin:0px;
-  text-indent:0px;
-}
-
 
 .disp_none{
   display:none;
