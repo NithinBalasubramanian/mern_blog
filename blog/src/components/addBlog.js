@@ -18,7 +18,6 @@ function AddBlog() {
     }
 
     useEffect(() => {
-        console.log(initialState);
         document.title = "Create Your Own Blog or News";
     },[])
 
@@ -44,7 +43,7 @@ function AddBlog() {
             let subpara_cont  = [ ...datas.subPara ];
             
             subpara_cont.push({
-                SubHeading : 'Check 2',
+                SubHeading : 'Sub Heading Part',
                 Content : nowValue
             });
             
