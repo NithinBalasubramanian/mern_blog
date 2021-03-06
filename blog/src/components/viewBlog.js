@@ -66,11 +66,11 @@ function ViewBlog(){
                             {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
                             <img src={itm.imgUrl} alt={itm.title} width="100%" height="auto" /> 
                             <div className="contentDisp">
-                                <p className="mainCont">{itm.blog}</p>
+                                <p className="paraMainCont">{itm.blog}</p>
                                    { (itm.subPara) ? 
                                        itm.subPara.map((sub_itm,s_k) => {
                                        return (
-                                           <p  className="subCont" key={s_k} >{sub_itm.Content}</p>
+                                           <p  className="paraSubCont" key={s_k} >{sub_itm.Content}</p>
                                        ) 
                                     })
                                    : null }
