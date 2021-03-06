@@ -38,7 +38,7 @@ router.post('/savedata',(req,res) => {
         url : data.url,
         auther : data.auther,
         blog : data.blog,
-        subPara : data.subPara,
+        subPara : JSON.parse(data.subPara);
         imgUrl : data.imgUrl,
         preheading : data.preheading,
         // fileName : file.name,
@@ -48,13 +48,13 @@ router.post('/savedata',(req,res) => {
     res.json(newTestblog);
     
     //save
-//     newTestblog.save((error) => {
-//         if(error){
-//             console.log(error);
-//         }else{
-//             res.json("Saved successfully");
-//         }
-//     });
+    newTestblog.save((error) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.json("Saved successfully");
+        }
+    });
 });
 
 router.put('/updateblog/:id',(req,res) => {
