@@ -72,6 +72,7 @@ function ViewBlog(){
                                    return (
                                        <p key={s_k} >{sub_itm.Content}</p>
                                    ) 
+                                })
                                : null }
                         </div>
                         </>
