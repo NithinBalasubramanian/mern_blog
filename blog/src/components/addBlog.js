@@ -39,7 +39,7 @@ function AddBlog() {
                 return {...prevState , [nowName] : title ,'url' : titleUrl }
             });
         }
-        elseif(nowName === 'subPara'){
+        else if(nowName === 'subPara'){
             let subpara_cont  = [ ...data.subpara ];
             
             subpara_Cont.push = e.target.value;
