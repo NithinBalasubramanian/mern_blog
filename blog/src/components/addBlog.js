@@ -42,7 +42,7 @@ function AddBlog() {
         else if(nowName === 'subPara'){
             let subpara_cont  = [ ...datas.subpara ];
             
-            subpara_cont.push = e.target.value;
+            subpara_cont.push({e.target.value});
             
             setDatas(prevState => {
                 return {...prevState , [nowName] : subpara_cont }
