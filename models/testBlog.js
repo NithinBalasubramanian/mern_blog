@@ -13,7 +13,7 @@ const testSchema =  new mongoose.Schema({
     preheading : String,
     subPara :  [{
         Content: String,
-        SubHeading : string
+        SubHeading : String
     }],
     createdOn : {
         type : Date,
