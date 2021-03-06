@@ -80,18 +80,20 @@ function AddBlog() {
         formdata.append('subPara',datas.subPara);
 
         formdata.append('preheading',datas.preheading);
+        
+        console.log(formdata);
 
-        axios.post('savedata',formdata,{
-            headers : {
-                'Content-Type' : 'multipart/form-data'
-            }
-        })
-        .then(res=>{
-            setDatas(initialState);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+//         axios.post('savedata',formdata,{
+//             headers : {
+//                 'Content-Type' : 'multipart/form-data'
+//             }
+//         })
+//         .then(res=>{
+//             setDatas(initialState);
+//         })
+//         .catch(err=>{
+//             console.log(err);
+//         })
         
     }
 
