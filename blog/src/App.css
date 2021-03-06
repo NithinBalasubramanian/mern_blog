@@ -149,7 +149,7 @@ p{
   padding:10px 0px;
 }
 
-.contentDisp .mainCont{
+.contentDisp .paraMainCont{
   padding:5px;
   color:#afa7b5;
   font-size: 14px;
@@ -157,7 +157,7 @@ p{
   margin:0px;
 }
 
-.contentDisp .subCont{
+.contentDisp .paraSubCont{
   padding:5px;
   color:#afa7b5;
   font-size: 14px;
