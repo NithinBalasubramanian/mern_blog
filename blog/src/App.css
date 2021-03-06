@@ -172,10 +172,11 @@ p{
   color:#151F2D;
 }
 
-.card_home small{
+.card_home .frontSubCont{
   padding:15px;
+  font-size:10px;
   height:auto;
-  color:#151F2D;
+  color:#b3bbbd;
 }
 
 .card_home a:hover{
