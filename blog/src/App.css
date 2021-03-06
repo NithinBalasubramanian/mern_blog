@@ -203,6 +203,9 @@ p{
 .preheading p {
   text-indent: 0px;
   color: #61556b;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 400;
   font-family: 'Playfair Display', serif;
 }
 
