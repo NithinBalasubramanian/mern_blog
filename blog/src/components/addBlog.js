@@ -12,12 +12,13 @@ function AddBlog() {
         'blog' : '',
         'imgUrl' : '',
         'preheading':'',
+        'subpara':[1],
         // 'file':'',
         // 'fileName' : ''
     }
 
     useEffect(() => {
-        document.title = "Create Your Blog";
+        document.title = "Create Your Own Blog or News";
     },[])
 
     let [ datas , setDatas ] = useState(initialState);
@@ -38,6 +39,15 @@ function AddBlog() {
                 return {...prevState , [nowName] : title ,'url' : titleUrl }
             });
         }
+        elseif(nowName === 'subPara'){
+            let subpara_cont  = [ ...data.subpara ];
+            
+            subpara_Cont.push = e.target.value;
+            
+            setDatas(prevState => {
+                return {...prevState , [nowName] : subpara_Cont }
+            });
+        }
         else{
             setDatas(prevState => {
                 return {...prevState , [ nowName ] : nowValue }
@@ -47,6 +57,8 @@ function AddBlog() {
 
     const onSubmitData = (e) => {
         e.preventDefault();
+        
+        console.log(data);
 
         const formdata = new FormData();
 
@@ -61,22 +73,23 @@ function AddBlog() {
         formdata.append('auther',datas.auther);
 
         formdata.append('blog',datas.blog);
+        
+        formdata.append('subpara',datas.subpara);
 
         formdata.append('preheading',datas.preheading);
 
-        axios.post('savedata',formdata,{
-            headers : {
-                'Content-Type' : 'multipart/form-data'
-            }
-        })
-        .then(res=>{
-            setDatas(initialState);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+//         axios.post('savedata',formdata,{
+//             headers : {
+//                 'Content-Type' : 'multipart/form-data'
+//             }
+//         })
+//         .then(res=>{
+//             setDatas(initialState);
+//         })
+//         .catch(err=>{
+//             console.log(err);
+//         })
         
-        e.preventDefault();
     }
 
     return (
@@ -103,6 +116,10 @@ function AddBlog() {
                 <div className="form-group">
                 <label>Blog Contents</label>
                     <textarea className="form-control" name="blog" rows="6" placeholder="blog" value={ datas.blog } onChange={ onChangeHandler } >{datas.blog }</textarea>
+                </div>
+                <div className="form-group">
+                <label>Sub Para Contents</label>
+                    <textarea className="form-control" name="subpara" rows="6" placeholder="Sub Paragraph" onChange={ onChangeHandler } ></textarea>
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
