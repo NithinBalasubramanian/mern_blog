@@ -77,7 +77,7 @@ function AddBlog() {
 
         formdata.append('blog',datas.blog);
         
-        formdata.append('subPara',datas.subPara);
+        formdata.append('subPara',JSON.stringify(datas.subPara));
 
         formdata.append('preheading',datas.preheading);
         
