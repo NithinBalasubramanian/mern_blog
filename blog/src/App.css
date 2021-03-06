@@ -145,8 +145,12 @@ p{
   padding:10px;
 }
 
-.card_home p{
-  padding:10px;
+.contentDisp{
+  padding:10px 0px;
+}
+
+.contentDisp p{
+  padding:5px;
   color:#afa7b5;
   font-size: 14px;
   font-weight: 400;
