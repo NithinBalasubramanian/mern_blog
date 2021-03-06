@@ -11,7 +11,10 @@ const testSchema =  new mongoose.Schema({
     blog : String,
     imgUrl : String, 
     preheading : String,
-    subPara : Array,
+    subPara :  [{
+        Content: String,
+        SubHeading : string
+    }],
     createdOn : {
         type : Date,
         default : new Date(),
