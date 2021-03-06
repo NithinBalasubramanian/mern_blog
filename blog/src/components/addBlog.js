@@ -12,7 +12,7 @@ function AddBlog() {
         'blog' : '',
         'imgUrl' : '',
         'preheading':'',
-        'subPara':[{SubHeading : 'Check',Content:'Just to check'}],
+        'subPara':[],
         // 'file':'',
         // 'fileName' : ''
     }
