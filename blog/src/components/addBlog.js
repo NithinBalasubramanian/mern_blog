@@ -81,17 +81,17 @@ function AddBlog() {
 
         formdata.append('preheading',datas.preheading);
 
-//         axios.post('savedata',formdata,{
-//             headers : {
-//                 'Content-Type' : 'multipart/form-data'
-//             }
-//         })
-//         .then(res=>{
-//             setDatas(initialState);
-//         })
-//         .catch(err=>{
-//             console.log(err);
-//         })
+        axios.post('savedata',formdata,{
+            headers : {
+                'Content-Type' : 'multipart/form-data'
+            }
+        })
+        .then(res=>{
+            setDatas(initialState);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
         
     }
 
