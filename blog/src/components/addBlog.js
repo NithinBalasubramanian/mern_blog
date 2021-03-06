@@ -122,7 +122,7 @@ function AddBlog() {
                 </div>
                 <div className="form-group">
                 <label>Sub Para Contents</label>
-                    <textarea className="form-control" name="subpara" rows="6" placeholder="Sub Paragraph" onChange={ onChangeHandler } ></textarea>
+                    <textarea className="form-control" name="subPara" rows="6" placeholder="Sub Paragraph" onChange={ onChangeHandler } ></textarea>
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
