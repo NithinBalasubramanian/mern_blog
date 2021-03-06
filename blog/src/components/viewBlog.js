@@ -67,7 +67,7 @@ function ViewBlog(){
                             <img src={itm.imgUrl} alt={itm.title} width="100%" height="auto" /> 
                             
                             <p>{itm.blog}</p>
-                               { (itm.subPara.length > 0) ? 
+                               { (itm.subPara) ? 
                                    itm.subPara.map((sub_itm,s_k) => {
                                    return (
                                        <p key={s_k} >{sub_itm.Content}</p>
