@@ -12,7 +12,7 @@ function AddBlog() {
         'blog' : '',
         'imgUrl' : '',
         'preheading':'',
-        'subpara':[{SubHeading : 'Check',Content:'Just to check'}],
+        'subPara':[{SubHeading : 'Check',Content:'Just to check'}],
         // 'file':'',
         // 'fileName' : ''
     }
@@ -41,7 +41,7 @@ function AddBlog() {
             });
         }
         else if(nowName === 'subPara'){
-            let subpara_cont  = [ ...datas.subpara ];
+            let subpara_cont  = [ ...datas.subPara ];
             
             subpara_cont.push({
                 SubHeading : 'Check 2',
