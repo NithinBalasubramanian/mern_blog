@@ -12,7 +12,7 @@ function AddBlog() {
         'blog' : '',
         'imgUrl' : '',
         'preheading':'',
-        'subpara':[1],
+        'subpara':[{SubHeading : 'Check',Content:'Just to check'}],
         // 'file':'',
         // 'fileName' : ''
     }
@@ -42,7 +42,10 @@ function AddBlog() {
         else if(nowName === 'subPara'){
             let subpara_cont  = [ ...datas.subpara ];
             
-            subpara_cont.push(e.target.value);
+            subpara_cont.push({
+                SubHeading : 'Check 2',
+                Content : nowValue
+            });
             
             setDatas(prevState => {
                 return {...prevState , [nowName] : subpara_cont }
