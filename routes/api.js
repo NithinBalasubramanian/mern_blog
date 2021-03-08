@@ -1,5 +1,6 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
+const categoryBlog = require('../models/categoryBlog');
 const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
@@ -47,6 +48,23 @@ router.post('/savedata',(req,res) => {
     
     //save
     newTestblog.save((error) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.json("Saved successfully");
+        }
+    });
+});
+
+router.post('/savecategory',(req,res) => {
+    const data = req.body;
+    
+    const newCategoryBlog = new categoryBlog({
+        category : data.category
+    });
+    
+    //save
+    newCategoryBlog.save((error) => {
         if(error){
             console.log(error);
         }else{
