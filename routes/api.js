@@ -1,6 +1,6 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
-const categoryBlog = require('../models/categoryBlog');
+const categoryBlog = require('../models/newCategoryBlog');
 const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
