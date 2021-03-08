@@ -3,7 +3,6 @@ import './App.css';
 import AddBlog from './components/addBlog';
 import AddCategory from './components/addCategory';
 import ListBlog from './components/listBlog';
-import LinkBlog from './components/link';
 import BlogHome from './components/blogHome';
 import Blog from './components/blog';
 import Footer from './components/footer';
