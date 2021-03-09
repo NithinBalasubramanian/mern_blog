@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from 'react-router-dom';
@@ -7,7 +7,11 @@ import { BiMenuAltLeft } from 'react-icons/bi';
 function Header(){
 
     const [ display_status , setdisplay_status ] = useState(false);
-
+    
+     useEffect(() => {
+        setdisplay_status(false);
+    },[])
+    
     const sidebarStatusHandler = () =>{
         setdisplay_status(!display_status);
     }
