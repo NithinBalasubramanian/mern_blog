@@ -13,7 +13,8 @@ const AddCategory = () => {
   
   useEffect(() => {
         document.title = "Mernblog - Create Category";
-    },[])
+    console.log(datas);
+  },[])
   
   const onChangeHandler = (e) =>{
         let nowName = e.target.name;
