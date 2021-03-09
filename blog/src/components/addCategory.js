@@ -13,6 +13,7 @@ const AddCategory = () => {
   
   useEffect(() => {
         document.title = "Mernblog - Create Category";
+    console.log(datas);
   },[])
   
   const onChangeHandler = (e) =>{
@@ -48,7 +49,7 @@ const AddCategory = () => {
             <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> Category </label>
-                    <input className="form-control" name="Category" placeholder="Category"  value={ datas.Category } onChange={ onChangeHandler } />
+                    <input className="form-control" name="Category" placeholder="Category" onChange={ onChangeHandler } />
                 </div> <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
         </div>
