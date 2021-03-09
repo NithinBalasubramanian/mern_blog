@@ -9,11 +9,11 @@ const AddCategory = () => {
     'Category' : ''
   }
   
-  let { datas , setDatas } = useState(initial);
+  let { catDatas , setCatDatas } = useState(initial);
   
   useEffect(() => {
         document.title = "Mernblog - Create Category";
-    console.log(initial);
+    console.log(catDatas);
   },[])
   
   const onChangeHandler = (e) =>{
@@ -27,7 +27,7 @@ const AddCategory = () => {
   const onSubmitData = (e) => {
       e.preventDefault();
     
-    let nowData = datas;
+    let nowData = catDatas;
     
     axios.post('savecategory',nowData,{
             headers : {
