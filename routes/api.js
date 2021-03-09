@@ -73,6 +73,17 @@ router.post('/savecategory',(req,res) => {
     });
 });
 
+router.get('/getCategory',(req,res) => {
+    categoryBlog.find({}).sort({createdOn:-1})
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+});
+
 router.put('/updateblog/:id',(req,res) => {
 
     const data = req.body;
