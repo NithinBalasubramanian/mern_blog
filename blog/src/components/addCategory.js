@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const AddCategory = () => {
   
   let initial = {
-    category : ''
+    category_name : ''
   }
   
   let { datas , setDatas } = useState(initial);
@@ -48,7 +48,7 @@ const AddCategory = () => {
             <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> Category </label>
-                    <input className="form-control" name="category" placeholder="category" value={ datas.category } onChange={ onChangeHandler } />
+                    <input className="form-control" name="category_name" placeholder="category" value={ datas.category_name } onChange={ onChangeHandler } />
                 </div> <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
         </div>
