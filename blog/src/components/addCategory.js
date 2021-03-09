@@ -41,13 +41,7 @@ const AddCategory = () => {
     <>
     <div className="container">
             <h2 className="subHead">Add Category</h2>
-            <form onSubmit={ onSubmitData } className="form" > 
-                <div className="form-group">
-                <label> Category </label>
-                    <input className="form-control" name="Category" placeholder="Category" value={ datas.Category } onChange={ onChangeHandler } />
-                </div>
-                <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
-            </form>
+           
         </div>
     </>
   )
