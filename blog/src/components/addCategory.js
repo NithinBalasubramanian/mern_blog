@@ -48,7 +48,7 @@ const AddCategory = () => {
             <form onSubmit={ onSubmitData } className="form" > 
                 <div className="form-group">
                 <label> Category </label>
-                    <input className="form-control" name="category_name" placeholder="category" value={ datas.category_name } onChange={ onChangeHandler } />
+                    <input className="form-control" name="category_name" placeholder="category"  onChange={ onChangeHandler } />
                 </div> <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
         </div>
