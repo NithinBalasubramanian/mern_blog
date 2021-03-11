@@ -19,7 +19,7 @@ const AddCategory = () => {
   const onChangeHandler = (e) =>{
         let nowName = e.target.name;
         let nowValue = e.target.value;
-        setDatas(prevState => {
+        setCatDatas(prevState => {
                 return {...prevState , [ nowName ] : nowValue }
             });
   }
@@ -35,7 +35,7 @@ const AddCategory = () => {
             }
         })
         .then(res=>{
-            setDatas('');
+            setCatDatas(initial);
         })
         .catch(err=>{
             console.log(err);
