@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const AddCategory = () => {
   
   let initial = {
-    'fields' : "news"
+    'fields' : "news data"
   }
   
   let { catDatas , setCatDatas } = useState(initial);
