@@ -14,7 +14,7 @@ const AddCategory = () => {
   useEffect(() => {
         document.title = "Mernblog - Create Category";
         console.log(catDatas);
-        console.log(catDatas.fields);
+//         console.log(catDatas.fields);
   },[])
   
   const onChangeHandler = (e) =>{
