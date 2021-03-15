@@ -35,6 +35,7 @@ router.post('/savedata',(req,res) => {
     // const filePath = '/uploads/'+file.name;
 
     const newTestblog = new testBlog({
+        category : data.category,
         title : data.title,
         url : data.url,
         auther : data.auther,
@@ -42,6 +43,9 @@ router.post('/savedata',(req,res) => {
         subPara : JSON.parse(data.subPara),
         imgUrl : data.imgUrl,
         preheading : data.preheading,
+        subImgUrl : data.subImgUrl,
+        videoLink : data.videoLink,
+        reference : data.reference,
         // fileName : file.name,
         // filePath : filePath
     });
