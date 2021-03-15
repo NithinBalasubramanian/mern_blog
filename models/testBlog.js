@@ -22,7 +22,7 @@ const testSchema =  new mongoose.Schema({
         type : Date,
         default : new Date(),
     },
-    reference : data.reference,
+    reference : String,
     // fileName : String,
     // filePath : String
 });
