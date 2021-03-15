@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const testSchema =  new mongoose.Schema({
+    category : String,
     title : {
         type : String,
         required : true,
@@ -10,6 +11,8 @@ const testSchema =  new mongoose.Schema({
     auther : String,
     blog : String,
     imgUrl : String, 
+    subImgUrl : String,
+    videoLink : String,
     preheading : String,
     subPara :  [{
         Content: String,
@@ -18,7 +21,8 @@ const testSchema =  new mongoose.Schema({
     createdOn : {
         type : Date,
         default : new Date(),
-    }
+    },
+    reference : data.reference,
     // fileName : String,
     // filePath : String
 });
