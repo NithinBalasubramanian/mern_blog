@@ -16,7 +16,7 @@ function AddBlog() {
         'subPara':[],
         'subImgUrl' : '',
         'videoLink' : '',
-        'reference : '',
+        'reference' : '',
         // 'file':'',
         // 'fileName' : ''
     }
