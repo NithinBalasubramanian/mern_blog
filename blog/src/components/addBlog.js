@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function AddBlog() {
 
     let initialState = {
+        'category' : '',
         'title' : '',
         'url' : '',
         'auther' : '',
@@ -13,6 +14,9 @@ function AddBlog() {
         'imgUrl' : '',
         'preheading':'',
         'subPara':[],
+        'subImgUrl' : '',
+        'videoLink' : '',
+        'reference : '',
         // 'file':'',
         // 'fileName' : ''
     }
@@ -66,6 +70,9 @@ function AddBlog() {
         const formdata = new FormData();
 
         // formdata.append('file',datas.file);
+        
+        
+        formdata.append('category',datas.category);
 
         formdata.append('title',datas.title);
 
@@ -80,6 +87,12 @@ function AddBlog() {
         formdata.append('subPara',JSON.stringify(datas.subPara));
 
         formdata.append('preheading',datas.preheading);
+        
+        formdata.append('subImgUrl',datas.subImgUrl);
+        
+        formdata.append('videoLink',datas.videoLink);
+        
+        formdata.append('reference',datas.reference);
         
         console.log(formdata);
 
@@ -110,8 +123,23 @@ function AddBlog() {
                     <input className="form-control" name="preheading" placeholder="Enter Pre heading" value={ datas.preheading } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
+                <label>Category</label>
+                    <select class="form-control" name="category" onChange={ onChangeHandler } >
+                        <option value="">Select a Category</option>
+                        <option value="techNews">TECH NEWS</option>
+                        <option value="techInfo">TECH INFOMATION</option>
+                        <option value="programming">PROGRAMMING</option>
+                        <option value="automobile">AUTOMOBILES</option>
+                        <option value="space">SPACE</option>
+                    </select>
+                </div>
+                <div className="form-group">
                 <label>Auther</label>
                     <input className="form-control" name="auther" placeholder="Auther" value={ datas.auther } onChange={ onChangeHandler } />
+                </div>
+                <div className="form-group">
+                     <label>Reference</label>
+                    <input className="form-control" name="reference" placeholder="Reference" value={ datas.reference } onChange={ onChangeHandler } />
                 </div>
                  <div className="form-group">
                  <label>Image</label>
@@ -125,6 +153,14 @@ function AddBlog() {
                 <div className="form-group">
                 <label>Sub Para Contents</label>
                     <textarea className="form-control" name="subPara" rows="6" placeholder="Sub Paragraph" onBlur={ onChangeHandler } ></textarea>
+                </div>
+                <div className="form-group">
+                     <label>SUB Image Url</label>
+                    <input className="form-control" name="subImgUrl" placeholder="Sub Image URL" value={ datas.subImgUrl } onChange={ onChangeHandler } />
+                </div>
+                <div className="form-group">
+                     <label>video Link</label>
+                    <input className="form-control" name="videoLink" placeholder="videoLink" value={ datas.videoLink } onChange={ onChangeHandler } />
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
