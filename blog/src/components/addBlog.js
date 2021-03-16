@@ -129,8 +129,9 @@ function AddBlog() {
                         <option value="techNews">TECH NEWS</option>
                         <option value="techInfo">TECH INFOMATION</option>
                         <option value="programming">PROGRAMMING</option>
-                        <option value="automobile">AUTOMOBILES</option>
+                        <option value="automobiles">AUTOMOBILES</option>
                         <option value="space">SPACE</option>
+                        <option value="others">OTHERS</option>
                     </select>
                 </div>
                 <div className="form-group">
