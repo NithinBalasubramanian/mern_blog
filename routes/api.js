@@ -174,4 +174,14 @@ router.get('/homeFetch',(req,res) => {
     })
 });
 
+router.get('/blogFetch/:url',(req,res) => {
+    testBlog.find({ category : req.params.category })
+    .then((data) => { 
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
 module.exports = router;
