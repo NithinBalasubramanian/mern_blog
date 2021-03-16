@@ -131,6 +131,7 @@ function AddBlog() {
                         <option value="programming">PROGRAMMING</option>
                         <option value="automobiles">AUTOMOBILES</option>
                         <option value="space">SPACE</option>
+                        <option value="finance">FINANCE</option>
                         <option value="others">OTHERS</option>
                     </select>
                 </div>
