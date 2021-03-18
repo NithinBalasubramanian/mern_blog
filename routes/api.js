@@ -175,7 +175,7 @@ router.get('/homeTopFetch',(req,res) => {
 });
 
 router.get('/homeFetch',(req,res) => {
-    testBlog.find({}).sort({createdOn:1}).limit(13)
+    testBlog.find({}).sort({createdOn:1}).limit(10)
     .then((data) => { 
         // console.log('data',data);
         res.json(data);
@@ -187,6 +187,16 @@ router.get('/homeFetch',(req,res) => {
 
 router.get('/blogFetch/:category',(req,res) => {
     testBlog.find({ category : req.params.category })
+    .then((data) => { 
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
+router.get('/recentCategory/:url/:category',(req,res) => {
+    testBlog.find({ url : { $ne : req.params.url  } , category : req.params.category }).sort({createdOn:-1}).limit(10)
     .then((data) => { 
         res.json(data);
     })
