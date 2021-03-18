@@ -195,7 +195,7 @@ router.get('/blogFetch/:category',(req,res) => {
     })
 })
 
-router.get('/recentCategory/:url/:category',(req,res) => {
+router.get('/recentCategory/:category/:url',(req,res) => {
     testBlog.find({ url : { $ne : req.params.url  } , category : req.params.category }).sort({createdOn:-1}).limit(10)
     .then((data) => { 
         res.json(data);
