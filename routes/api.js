@@ -186,7 +186,7 @@ router.get('/homeFetch',(req,res) => {
 });
 
 router.get('/blogFetch/:category',(req,res) => {
-    testBlog.find({ category : req.params.category })
+    testBlog.find({ category : req.params.category }).sort({createdOn:-1})
     .then((data) => { 
         res.json(data);
     })
