@@ -1,7 +1,7 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
 const categoryBlog = require('../models/newCategoryBlog');
-const subscribe = require('../models/newSubscribe');
+//const subscribe = require('../models/newSubscribe');
 const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
@@ -233,15 +233,15 @@ router.get('/recentCategory/:category/:url',(req,res) => {
 //     });
 // });
 
-router.get('/subscribers',(req,res) => {
-    subscribe.find({}).sort({createdOn:-1})
-    .then((data) => { 
-        // console.log('data',data);
-        res.json(data);
-    })
-    .catch((error) => { 
-        console.log('error',error);
-    })
-})
+// router.get('/subscribers',(req,res) => {
+//     subscribe.find({}).sort({createdOn:-1})
+//     .then((data) => { 
+//         // console.log('data',data);
+//         res.json(data);
+//     })
+//     .catch((error) => { 
+//         console.log('error',error);
+//     })
+// })
 
 module.exports = router;
