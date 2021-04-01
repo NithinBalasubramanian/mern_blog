@@ -233,4 +233,15 @@ router.post('/subscribe',(req,res) => {
     });
 });
 
+router.get('/subscribers',(req,res) => {
+    subscribe.find({}).sort({createdOn:-1})
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
 module.exports = router;
