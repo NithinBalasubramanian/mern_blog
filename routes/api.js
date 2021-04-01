@@ -195,6 +195,16 @@ router.get('/blogFetch/:category',(req,res) => {
     })
 })
 
+router.get('/blogFetchHome/:category',(req,res) => {
+    testBlog.find({ category : req.params.category }).sort({createdOn:-1}).limit(6)
+    .then((data) => { 
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+})
+
 router.get('/recentCategory/:category/:url',(req,res) => {
     testBlog.find({ url : { $ne : req.params.url  } , category : req.params.category }).sort({createdOn:-1}).limit(10)
     .then((data) => { 
