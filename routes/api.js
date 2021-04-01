@@ -216,22 +216,22 @@ router.get('/recentCategory/:category/:url',(req,res) => {
     })
 })
 
-router.post('/subscribe',(req,res) => {
-    const data = req.body;
+// router.post('/subscribe',(req,res) => {
+//     const data = req.body;
     
-    const newSubscribe = new subscribe({
-        email : data.email
-    });
+//     const newSubscribe = new subscribe({
+//         email : data.email
+//     });
     
-    //save
-    newSubscribe.save((error) => {
-        if(error){
-            console.log(error);
-        }else{
-            res.json("Saved successfully");
-        }
-    });
-});
+//     //save
+//     newSubscribe.save((error) => {
+//         if(error){
+//             console.log(error);
+//         }else{
+//             res.json("Saved successfully");
+//         }
+//     });
+// });
 
 router.get('/subscribers',(req,res) => {
     subscribe.find({}).sort({createdOn:-1})
