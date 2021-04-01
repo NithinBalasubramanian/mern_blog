@@ -115,7 +115,7 @@ router.get('/view/:url',(req,res) => {
 })
 
 router.get('/recent/:url',(req,res) => {
-    testBlog.find({ url : { $ne : req.params.url  }}).sort({createdOn:-1}).limit(10)
+    testBlog.find({ url : { $ne : req.params.url  }}).sort({createdOn:-1}).limit(7)
     .then((data) => { 
         res.json(data);
     })
