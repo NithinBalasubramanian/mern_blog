@@ -1,6 +1,7 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
 const categoryBlog = require('../models/newCategoryBlog');
+const subscribe = require('../models/newSubscribe');
 const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
@@ -214,5 +215,22 @@ router.get('/recentCategory/:category/:url',(req,res) => {
         console.log('error',error);
     })
 })
+
+router.post('/subscribe',(req,res) => {
+    const data = req.body;
+    
+    const newSubscribe = new subscribe({
+        email : data.email
+    });
+    
+    //save
+    newSubscribe.save((error) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.json("Saved successfully");
+        }
+    });
+});
 
 module.exports = router;
