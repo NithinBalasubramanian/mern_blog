@@ -69,7 +69,7 @@ function AddBlog() {
             });
             
             setDatas(prevState => {
-                return {...prevState , [nowName] : subpara_cont }
+                return {...prevState , [nowName] : subLink_cont }
             });
         }
         else if(nowName === 'subHead'){
