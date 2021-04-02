@@ -18,6 +18,10 @@ const testSchema =  new mongoose.Schema({
         Content: String,
         SubHeading : String
     }],
+    subLink :  [{
+        linkFor: String,
+        link : String
+    }],
     createdOn : {
         type : Date,
         default : new Date(),
