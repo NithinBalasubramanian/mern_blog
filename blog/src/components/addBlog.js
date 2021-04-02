@@ -14,6 +14,7 @@ function AddBlog() {
         'imgUrl' : '',
         'preheading':'',
         'subPara':[],
+        'subLink':[],
         'subImgUrl' : '',
         'videoLink' : '',
         'reference' : '',
@@ -28,6 +29,8 @@ function AddBlog() {
     let [ datas , setDatas ] = useState(initialState);
     
     let [ typeData , setTypeData ] = useState('para');
+    
+    let [ linkFor , setlinkFor ] = useState('Ref');
 
     const onChangeHandler = (e) =>{
         let nowName = e.target.name;
@@ -57,8 +60,23 @@ function AddBlog() {
                 return {...prevState , [nowName] : subpara_cont }
             });
         }
+        else if(nowName === 'subLink'){
+            let subLink_cont  = [ ...datas.subLink ];
+            
+            subLink_cont.push({
+                linkFor : linkFor,
+                link : nowValue
+            });
+            
+            setDatas(prevState => {
+                return {...prevState , [nowName] : subpara_cont }
+            });
+        }
         else if(nowName === 'subHead'){
             setTypeData(e.target.value);
+        }
+        else if(nowName === 'linkFor'){
+            setlinkFor(e.target.value);
         }
         else{
             setDatas(prevState => {
@@ -90,6 +108,8 @@ function AddBlog() {
         formdata.append('blog',datas.blog);
         
         formdata.append('subPara',JSON.stringify(datas.subPara));
+        
+        formdata.append('subLink',JSON.stringify(datas.subLink));
 
         formdata.append('preheading',datas.preheading);
         
@@ -174,8 +194,20 @@ function AddBlog() {
                     <input className="form-control" name="subImgUrl" placeholder="Sub Image URL" value={ datas.subImgUrl } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
+                <label>Link For</label>
+                    <select class="form-control" name="linkFor" onChange={ onChangeHandler } >
+                        <option value="ref">Reference</option>
+                        <option value="also_view">Also view</option>
+                        <option value="check_out">Check Out</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                     <label>Sub Links</label>
+                    <input className="form-control" name="subLink" placeholder="Sub Links" onBlur={ onChangeHandler } />
+                </div>
+                <div className="form-group">
                      <label>video Link</label>
-                    <input className="form-control" name="videoLink" placeholder="videoLink" value={ datas.videoLink } onChange={ onChangeHandler } />
+                    <input className="form-control" name="videoLink" placeholder="videoLink" value={ datas.videoLink } onChange={ onChangeHandler }   />
                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
