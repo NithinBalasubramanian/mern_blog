@@ -42,6 +42,7 @@ router.post('/savedata',(req,res) => {
         auther : data.auther,
         blog : data.blog,
         subPara : JSON.parse(data.subPara),
+        subLink : JSON.parse(data.subLink),
         imgUrl : data.imgUrl,
         preheading : data.preheading,
         subImgUrl : data.subImgUrl,
