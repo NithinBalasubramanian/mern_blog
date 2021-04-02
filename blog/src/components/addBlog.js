@@ -26,6 +26,8 @@ function AddBlog() {
     },[])
 
     let [ datas , setDatas ] = useState(initialState);
+    
+    let [ typeData , setTypeData ] = useState('para');
 
     const onChangeHandler = (e) =>{
         let nowName = e.target.name;
@@ -47,13 +49,16 @@ function AddBlog() {
             let subpara_cont  = [ ...datas.subPara ];
             
             subpara_cont.push({
-                SubHeading : 'Sub Heading Part',
+                SubHeading : typeData,
                 Content : nowValue
             });
             
             setDatas(prevState => {
                 return {...prevState , [nowName] : subpara_cont }
             });
+        }
+        else if(nowName === 'subHead'){
+            setTypeData(e.target.value);
         }
         else{
             setDatas(prevState => {
@@ -152,6 +157,14 @@ function AddBlog() {
                 <label>Blog Contents</label>
                     <textarea className="form-control" name="blog" rows="6" placeholder="blog" value={ datas.blog } onChange={ onChangeHandler } >{datas.blog }</textarea>
                 </div>
+                <div className="form-group">
+                        <label>Type</label>
+                            <select class="form-control" name="subHead" onChange={ onChangeHandler } >
+                                <option value="para">para</option>
+                                <option value="sub_head">sub_heading</option>
+                                <option value="head">heading</option>
+                            </select>
+                        </div>
                 <div className="form-group">
                 <label>Sub Para Contents</label>
                     <textarea className="form-control" name="subPara" rows="6" placeholder="Sub Paragraph" onBlur={ onChangeHandler } ></textarea>
