@@ -183,6 +183,8 @@ function AddBlog() {
                                 <option value="para">para</option>
                                 <option value="sub_head">sub_heading</option>
                                 <option value="head">heading</option>
+                                <option value="sub_img">Image</option>
+                                <option value="tweet">Tweet</option>
                             </select>
                         </div>
                 <div className="form-group">
