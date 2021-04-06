@@ -185,15 +185,12 @@ function AddBlog() {
                                 <option value="head">heading</option>
                                 <option value="sub_img">Image</option>
                                 <option value="tweet">Tweet</option>
+                                <option value="bold">Bold</option>
                             </select>
                         </div>
                 <div className="form-group">
                 <label>Sub Para Contents</label>
                     <textarea className="form-control" name="subPara" rows="6" placeholder="Sub Paragraph" onBlur={ onChangeHandler } ></textarea>
-                </div>
-                <div className="form-group">
-                     <label>SUB Image Url</label>
-                    <input className="form-control" name="subImgUrl" placeholder="Sub Image URL" value={ datas.subImgUrl } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
                 <label>Link For</label>
