@@ -67,13 +67,37 @@ function ViewBlog(){
                             <img src={itm.imgUrl} alt={itm.title} width="100%" height="auto" /> 
                             <div className="contentDisp">
                                 <p className="paraMainCont">{itm.blog}</p>
-                                   { (itm.subPara) ? 
+                                    { (itm.subPara) ? 
                                        itm.subPara.map((sub_itm,s_k) => {
-                                       return (
-                                           <p  className="paraSubCont" key={s_k} >{sub_itm.Content}</p>
-                                       ) 
+                                        if(sub_itm.SubHeading === 'head'){
+                                            return (
+                                                <h2  key={s_k} >{sub_itm.Content}</h2>
+                                            ) 
+                                        }else if(sub_itm.SubHeading === 'sub_head'){
+                                            return (
+                                                <h4  key={s_k} >{sub_itm.Content}</h4>
+                                            ) 
+                                        }else if(sub_itm.SubHeading === 'sub_img'){
+                                            return (
+                                                <img src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
+                                            ) 
+                                        }else if(sub_itm.SubHeading === 'tweet'){
+                                            return (
+                                                <div className="tweet">
+                                                </div>
+                                            ) 
+                                        }else if(sub_itm.SubHeading === 'bold'){
+                                            return (
+                                                <p><b  key={s_k} >{sub_itm.Content}</b></p>
+                                            ) 
+                                        }else{
+                                            return (
+                                                <p  className="paraSubCont" key={s_k} >{sub_itm.Content}</p>
+                                            ) 
+                                        }
                                     })
-                                   : null }
+                                   : null 
+                                   }
                             </div>
                         </div>
                         </>
