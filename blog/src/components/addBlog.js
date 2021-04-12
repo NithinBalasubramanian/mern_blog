@@ -182,6 +182,8 @@ function AddBlog() {
                             <select class="form-control" name="subHead" onChange={ onChangeHandler } >
                                 <option value="para">para</option>
                                 <option value="sub_head">sub_heading</option>
+                                <option value="youtube">Youtube</option>
+                                <option value="quotes">Quotes</option>
                                 <option value="head">heading</option>
                                 <option value="sub_img">Image</option>
                                 <option value="tweet">Tweet</option>
@@ -204,10 +206,10 @@ function AddBlog() {
                      <label>Sub Links</label>
                     <input className="form-control" name="subLink" placeholder="Sub Links" onBlur={ onChangeHandler } />
                 </div>
-                <div className="form-group">
-                     <label>video Link</label>
-                    <input className="form-control" name="videoLink" placeholder="videoLink" value={ datas.videoLink } onChange={ onChangeHandler }   />
-                </div>
+//                 <div className="form-group">
+//                      <label>video Link</label>
+//                     <input className="form-control" name="videoLink" placeholder="videoLink" value={ datas.videoLink } onChange={ onChangeHandler }   />
+//                 </div>
                 <button type="submit" className="btn btn-sm btn-primary blogSubmit">Submit</button>
             </form>
         </div>
