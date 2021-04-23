@@ -15,7 +15,7 @@ function AddBlog() {
         'preheading':'',
         'subPara':[],
         'subLink':[],
-        'subImgUrl' : '',
+        'key' : '',
         'videoLink' : '',
         'reference' : '',
         // 'file':'',
@@ -113,7 +113,7 @@ function AddBlog() {
 
         formdata.append('preheading',datas.preheading);
         
-        formdata.append('subImgUrl',datas.subImgUrl);
+        formdata.append('key',datas.key);
         
         formdata.append('videoLink',datas.videoLink);
         
@@ -146,6 +146,10 @@ function AddBlog() {
                 <div className="form-group">
                 <label>Pre heading</label>
                     <input className="form-control" name="preheading" placeholder="Enter Pre heading" value={ datas.preheading } onChange={ onChangeHandler } />
+                </div>
+                <div className="form-group">
+                     <label>Key Tags</label>
+                    <input className="form-control" name="key" placeholder="Reference" value={ datas.key } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
                 <label>Category</label>
