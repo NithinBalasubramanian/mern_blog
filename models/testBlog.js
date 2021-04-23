@@ -11,7 +11,7 @@ const testSchema =  new mongoose.Schema({
     auther : String,
     blog : String,
     imgUrl : String, 
-    subImgUrl : String,
+    key : String,
     videoLink : String,
     preheading : String,
     subPara :  [{
