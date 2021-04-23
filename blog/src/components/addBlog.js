@@ -149,7 +149,7 @@ function AddBlog() {
                 </div>
                 <div className="form-group">
                      <label>Key Tags</label>
-                    <input className="form-control" name="key" placeholder="Reference" value={ datas.key } onChange={ onChangeHandler } />
+                    <input className="form-control" name="key" placeholder="Keys" value={ datas.key } onChange={ onChangeHandler } />
                 </div>
                 <div className="form-group">
                 <label>Category</label>
