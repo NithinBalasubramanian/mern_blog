@@ -108,9 +108,9 @@ function LinkBlog() {
                     { Listdata.map((itm,k) => {
                         return(
                                 <tr key={k}>
-                                    <td>{itm.by}</td>
-                                    <td className="contWidth">{itm.content}</td>
-                                    <td><button className="btn btn-danger btn-sm " onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
+                                    <td className="contWidth">{itm.by}</td>
+                                    <td>{itm.content}</td>
+                                    <td  className="contWidth"><button className="btn btn-danger btn-sm " onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
                                 </tr>
                         )
                     })}
