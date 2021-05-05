@@ -3,7 +3,6 @@ import '../App.css';
 import axios from '../config/instance';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddLink from './addLink';
-import moment from 'moment';
 
 function LinkBlog() {
 
@@ -100,7 +99,6 @@ function LinkBlog() {
                 <table className="table table-bordered table-stripped">
                     <thead>
                         <tr>
-                            <th>Date</th>
                             <th>By</th>
                             <th>Cont</th>
                             <th>Action</th>
@@ -110,7 +108,6 @@ function LinkBlog() {
                     { Listdata.map((itm,k) => {
                         return(
                                 <tr key={k}>
-                                    <td>{ moment(itm.createdOn).fromNow() }</td>
                                     <td>{itm.by}</td>
                                     <td className="contWidth">{itm.content}</td>
                                     <td><button className="btn btn-danger btn-sm " onClick={ () => { deleteHandler(itm._id) }}>Delete</button></td>
