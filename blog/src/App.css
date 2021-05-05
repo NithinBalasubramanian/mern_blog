@@ -416,6 +416,10 @@ footer p{
   margin:0px auto;
 }
 
+.contWidth{
+  width :140px;
+}
+
 @media screen and (max-width : 1300px){
   .blog_container{
     width:90%;
