@@ -31,7 +31,7 @@ function App() {
           <Route path="/category" exact >
             <AddCategory />
           </Route>
-          <Route path="/Dubai" exact >
+          <Route path="/uk" exact >
             <LinkBlog />
           </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
