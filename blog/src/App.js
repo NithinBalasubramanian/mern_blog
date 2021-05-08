@@ -34,9 +34,6 @@ function App() {
           <Route path="/uk" exact >
             <LinkBlog />
           </Route>
-          <Route path="/script" exact >
-            <LinkBlog />
-          </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
           </Route>
         </Switch>
