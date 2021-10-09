@@ -165,6 +165,19 @@ router.delete('/deletelink/:id',(req,res) => {
 
 //Api fetch for tech-Idiots ( Home Page )
 
+
+
+router.get('/homeBlogs',(req,res) => {
+    testBlog.find({}).sort({createdOn:1})
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
+});
+
 router.get('/homeTopFetch',(req,res) => {
     testBlog.find({}).sort({createdOn:-1}).limit(8)
     .then((data) => { 
