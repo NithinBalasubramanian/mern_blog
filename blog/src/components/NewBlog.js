@@ -5,7 +5,8 @@ import axios from '../config/instance';
 
 const NewBlog = () => { 
 
-let [ blog , setBlog ] = useState('')
+let [ blog , setBlog ] = useState([])
+
 
 useEffect(()=>{
     getBlog()
@@ -13,7 +14,7 @@ useEffect(()=>{
 
 const getBlog = () => {
 
-   axios.post('newBlog')
+   axios.post('/newBlog')
         .then(res => {
              setBlog(res.data)
         })
@@ -27,6 +28,7 @@ const getBlog = () => {
 return( <>
 <div> 
 <h2>New</h2>
+
        { blog.map((itm)=>{
         
            return (<div>
