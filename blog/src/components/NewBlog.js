@@ -14,7 +14,7 @@ useEffect(()=>{
 
 const getBlog = () => {
 
-   axios.post('newBlog')
+   axios.get('newBlog')
         .then(res => {
              setBlog(res.data)
         })
