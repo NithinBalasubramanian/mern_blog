@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import AddBlog from './components/addBlog';
 import BlogMore from './components/BlogMore';
+import NewBlog from './components/NewBlog
 import AddCategory from './components/addCategory';
 import ListBlog from './components/listBlog';
 import LinkBlog from './components/link';
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/BlogMore" exact >
             <BlogMore />
+          </Route>
+          <Route path="/NewBlog" exact >
+            <NewBlog />
           </Route>
           <Route path="/ListBlog" exact >
             <ListBlog />
