@@ -15,6 +15,8 @@ const BlogMore = () =>  {
 
     let [ blog , setBlog ] = useState('')
 
+    let [ blogres , setBlogres ] = useState('1')
+
     const handleChange = (value) => {
         setBlog(value)
         // console.log(value);
@@ -32,7 +34,8 @@ const BlogMore = () =>  {
             }
         })
         .then(res=>{
-            // setDatas(initialState);
+                 // setDatas(initialState);
+             setBlogres(res)
         })
         .catch(err=>{
             console.log(err);
@@ -76,7 +79,7 @@ const BlogMore = () =>  {
             <div>
                 { parse(blog) }
             </div>
-
+               <div>{ blogres }</div>
          </div>
 
         </>
