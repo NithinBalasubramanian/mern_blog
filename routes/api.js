@@ -63,7 +63,7 @@ router.post('/savedata',(req,res) => {
     });
 });
 
-router.post('/savedata',(req,res) => {
+router.post('/saveBlog',(req,res) => {
 
     // if(req.files === null){
     //     return res.status(400).json({msg:'No files found'});
@@ -110,7 +110,7 @@ router.post('/savedata',(req,res) => {
     });
 });
 
-router.get('/homeBlogs',(req,res) => {
+router.get('/newBlog',(req,res) => {
     blog.find({}).sort({createdOn:1})
     .then((data) => { 
         // console.log('data',data);
