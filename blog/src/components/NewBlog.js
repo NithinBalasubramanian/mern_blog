@@ -32,7 +32,7 @@ return( <>
            <div>
                 { parse(itm.blogData) }
             </div>
-            </hr>
+            <hr />
         })
            
          </div>
