@@ -35,7 +35,7 @@ const BlogMore = () =>  {
         })
         .then(res=>{
                  // setDatas(initialState);
-             setBlogres(res)
+             setBlogres(JSON.stringify(res))
         })
         .catch(err=>{
             console.log(err);
