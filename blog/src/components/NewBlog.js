@@ -14,7 +14,7 @@ useEffect(()=>{
 
 const getBlog = () => {
 
-   axios.post('/newBlog')
+   axios.post('newBlog')
         .then(res => {
              setBlog(res.data)
         })
@@ -31,10 +31,14 @@ return( <>
 <p>{blog.length}</p>
 
        { blog.map((itm)=>{
+
+
         
-           return (<div>
+           return (
+
+<>{ itm.blogData ? <div>
                 { parse(itm.blogData) }
-            </div>)
+            </div> : null } </> )
             
         })
       }
