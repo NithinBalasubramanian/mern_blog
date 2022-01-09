@@ -101,7 +101,7 @@ router.post('/saveBlog',(req,res) => {
         blogData : data.BlogData
     });
 
-     res.json(data)
+     res.json(newBlog)
     
     //save
     newBlog.save((error) => {
