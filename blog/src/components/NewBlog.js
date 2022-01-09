@@ -14,8 +14,7 @@ useEffect(()=>{
 const getBlog = () => {
 
    axios.post('newBlog')
-        .then(res=>{
-                 // setDatas(initialState);
+        .then(res => {
              setBlog(res.data)
         })
         .catch(err=>{
