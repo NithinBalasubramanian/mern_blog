@@ -97,7 +97,7 @@ router.post('/saveBlog',(req,res) => {
         // reference : data.reference,
         // fileName : file.name,
         // filePath : filePath
-        blog : data.BlogData
+        blogData : data.BlogData
     });
     
     //save

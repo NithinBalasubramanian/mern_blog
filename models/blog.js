@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const blogSchema =  new mongoose.Schema({
-    blog : String ,
+    blogData : {
+        type : String,
+     } ,
     createdOn : {
         type : Date,
         default : new Date(),
