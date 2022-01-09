@@ -38,5 +38,8 @@ return( <>
          </div>
 
         </>
+)
 
    }
+
+export default Newblog
