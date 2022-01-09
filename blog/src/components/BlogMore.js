@@ -24,11 +24,16 @@ const BlogMore = () =>  {
     
       const addMore = () => {
 
-        let data = {
-            BlogData : blog
-        }
+const formdata = new FormData();
 
-        axios.post('saveBlog',data)
+
+formdata.append('BlogData',blog)
+
+       // let data = {
+           // BlogData : blog
+       // }
+
+        axios.post('saveBlog',formdata)
         .then(res=>{
                  // setDatas(initialState);
              setBlogres(JSON.stringify(res))
