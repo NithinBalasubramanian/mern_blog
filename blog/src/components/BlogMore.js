@@ -28,11 +28,7 @@ const BlogMore = () =>  {
             BlogData : blog
         }
 
-        axios.post('saveBlog',data,{
-            headers : {
-                'Content-Type' : 'multipart/form-data'
-            }
-        })
+        axios.post('saveBlog',data)
         .then(res=>{
                  // setDatas(initialState);
              setBlogres(JSON.stringify(res))
