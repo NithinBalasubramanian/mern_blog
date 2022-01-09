@@ -3,7 +3,7 @@ import React, { useState , useEffect } from 'react';
 import parse from 'html-react-parser';
 import axios from '../config/instance';
 
-const Newblog = () => { 
+const NewBlog = () => { 
 
 let [ blog , setBlog ] = useState('')
 
@@ -27,7 +27,7 @@ const getBlog = () => {
 return( <>
 <div> 
        { blog.map((itm)=>{
-        itm.blogData && 
+        
            <div>
                 { parse(itm.blogData) }
             </div>
@@ -42,4 +42,4 @@ return( <>
 
    }
 
-export default Newblog
+export default NewBlog
