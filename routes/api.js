@@ -1,5 +1,6 @@
 const express = require('express');
 const testBlog = require('../models/testBlog');
+const blog = require('../models/blog');
 const categoryBlog = require('../models/newCategoryBlog');
 //const subscribe = require('../models/newSubscribe');
 const linkBlog = require('../models/linkBlog');
@@ -60,6 +61,64 @@ router.post('/savedata',(req,res) => {
             res.json("Saved successfully");
         }
     });
+});
+
+router.post('/savedata',(req,res) => {
+
+    // if(req.files === null){
+    //     return res.status(400).json({msg:'No files found'});
+    // }
+
+    const data = req.body;
+
+    // const file = req.files.file;
+    
+    // file.mv(`${__dirname}/../blog/public/uploads/${file.name}`,err => {
+    //     if(err){
+    //         res.json("Error");
+    //         return res.status(200).send(err);
+    //     }
+    // })
+
+    // const filePath = '/uploads/'+file.name;
+
+    const newBlog = new blog({
+        // category : data.category,
+        // title : data.title,
+        // url : data.url,
+        // auther : data.auther,
+        // blog : data.blog,
+        // subPara : JSON.parse(data.subPara),
+        // subLink : JSON.parse(data.subLink),
+        // imgUrl : data.imgUrl,
+        // preheading : data.preheading,
+        // key : data.key,
+        // videoLink : data.videoLink,
+        // reference : data.reference,
+        // fileName : file.name,
+        // filePath : filePath
+        blog : data.BlogData
+    });
+    
+    //save
+    newBlog.save((error) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.json("Saved successfully");
+        }
+    });
+});
+
+router.get('/homeBlogs',(req,res) => {
+    blog.find({}).sort({createdOn:1})
+    .then((data) => { 
+        // console.log('data',data);
+        res.json(data);
+    })
+    .catch((error) => { 
+        console.log('error',error);
+    })
 });
 
 router.post('/savecategory',(req,res) => {
