@@ -28,6 +28,7 @@ const getBlog = () => {
 return( <>
 <div> 
 <h2>New</h2>
+<p>{blog.length}</p>
 
        { blog.map((itm)=>{
         
