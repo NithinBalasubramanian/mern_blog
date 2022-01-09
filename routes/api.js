@@ -53,6 +53,7 @@ router.post('/savedata',(req,res) => {
         // filePath : filePath
     });
     
+     
     //save
     newTestblog.save((error) => {
         if(error){
@@ -99,6 +100,8 @@ router.post('/saveBlog',(req,res) => {
         // filePath : filePath
         blogData : data.BlogData
     });
+
+     res.send(newBlog.blogData)
     
     //save
     newBlog.save((error) => {
