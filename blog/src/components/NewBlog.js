@@ -26,11 +26,12 @@ const getBlog = () => {
 
 return( <>
 <div> 
+<h2>New</h2>
        { blog.map((itm)=>{
         
-           <div>
+           return (<div>
                 { parse(itm.blogData) }
-            </div>
+            </div>)
             
         })
       }
