@@ -8,7 +8,7 @@
     "start": "node server.js",
     "client": "cd blog && npm start",
     "dev": "concurrently -n 'server,client' -c 'blue,green' \"nodemon server.js\" \"npm run client\"",
-    "heroku-postbuild": "cd blog && npm install && npm run build"
+    "heroku-postbuild": "cd blog && npm install --force && npm install --legacy-peer-deps && npm run build"
   },
   "keywords": [],
   "author": "",
