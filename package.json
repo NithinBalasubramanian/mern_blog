@@ -29,5 +29,9 @@
     "react-icon": "^1.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "engines": {
+    "node": "16.16.0",
+    "npm": "9.1.3"
+}
 }
