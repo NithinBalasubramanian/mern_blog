@@ -1,8 +1,6 @@
 import React , { useState , useEffect } from 'react';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from '../config/instance';
-import moment from 'moment';
 
 function ViewBlog(){
     let {url} = useParams();
@@ -11,10 +9,10 @@ function ViewBlog(){
 
     const [ recent , setRecent ] = useState([]);
 
-    const [ loader , setLoader ] = useState(true);
+    const [ loader , setLoader ] = useState(false);
 
     const Fetchdata = () => {
-        axios.get('/view/'+url)
+        axios.get(`/view/${url}`)
         .then( res => {
             setDatas(res.data);
             setLoader(false);
@@ -46,7 +44,7 @@ function ViewBlog(){
 
     return(
         <div className="blog_container">
-            <div class={ (loader) ? 'loading' : ''}></div>
+            <div className={ (loader) ? 'loading' : ''}></div>
             <div className="blogContent">
                 { datas.map((itm,k) => { 
                     document.title=itm.title;
@@ -104,7 +102,7 @@ function ViewBlog(){
                     )
                 }) }
                 <div className="col-md-4 row recent">
-                    <div class="recent_part">
+                    <div className="recent_part">
                         <h4>Recent Blog</h4>
                         {recent.map((itm,k) => {
                             return (

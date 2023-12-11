@@ -153,7 +153,7 @@ function AddBlog() {
                 </div>
                 <div className="form-group">
                 <label>Category</label>
-                    <select class="form-control" name="category" onChange={ onChangeHandler } >
+                    <select className="form-control" name="category" onChange={ onChangeHandler } >
                         <option value="">Select a Category</option>
                         <option value="techNews">TECH NEWS</option>
                         <option value="techInfo">TECH INFOMATION</option>
@@ -183,7 +183,7 @@ function AddBlog() {
                 </div>
                 <div className="form-group">
                         <label>Type</label>
-                            <select class="form-control" name="subHead" onChange={ onChangeHandler } >
+                            <select className="form-control" name="subHead" onChange={ onChangeHandler } >
                                 <option value="para">para</option>
                                 <option value="sub_head">sub_heading</option>
                                 <option value="youtube">Youtube</option>
@@ -201,7 +201,7 @@ function AddBlog() {
                 </div>
                 <div className="form-group">
                 <label>Link For</label>
-                    <select class="form-control" name="linkFor" onChange={ onChangeHandler } >
+                    <select className="form-control" name="linkFor" onChange={ onChangeHandler } >
                         <option value="ref">Reference</option>
                         <option value="also_view">Also view</option>
                         <option value="check_out">Check Out</option>

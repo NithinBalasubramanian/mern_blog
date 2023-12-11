@@ -76,7 +76,7 @@ formdata.append('BlogData',blog)
                 ]}
                 />
 
-                <button class="btn btn-success" onClick={ addMore }>Add Blog</button>
+                <button className="btn btn-success" onClick={ addMore }>Add Blog</button>
             <div>
                 { parse(blog) }
             </div>

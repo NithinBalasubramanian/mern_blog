@@ -10,8 +10,7 @@ import BlogHome from './components/blogHome';
 import Blog from './components/blog';
 import Footer from './components/footer';
 import ViewBlog from './components/viewBlog';
-import { BrowserRouter as Router} from 'react-router-dom';
-import { Switch , Route} from 'react-router-dom';
+import { Routes, BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
 
@@ -20,8 +19,16 @@ function App() {
       <Router>
         <Blog />
         <div className="main_menu">
-        <Switch>
-          <Route path="/" exact>
+        <Routes>
+        <Route path="/" element={ <BlogHome />} exact />
+        <Route path="/AddBlog" element={ <AddBlog />} exact />
+        <Route path="/BlogMore" element={ <BlogMore />} exact />
+        <Route path="/NewBlog" element={ <NewBlog />} exact />
+        <Route path="/ListBlog" element={ <ListBlog />} exact />
+        <Route path="/category" element={ <AddCategory />} exact />
+        <Route path="/ListBlog" element={ <ListBlog />} exact />
+        <Route path="/Blog/:url" element={ <ViewBlog />} exact />
+          {/* <Route path="/" exact>
             <BlogHome />
           </Route>
           <Route path="/AddBlog" exact >
@@ -43,8 +50,8 @@ function App() {
             <LinkBlog />
           </Route>
           <Route path="/Blog/:url" children={<ViewBlog />} exact>
-          </Route>
-        </Switch>
+          </Route> */}
+        </Routes>
       </div>
       </Router>
     <Footer/>

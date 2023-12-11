@@ -27,7 +27,7 @@ function BlogHome() {
 
     return (
         <div className="container">
-         <div class={ (loader) ? 'loading' : ''}></div>
+         <div className={ (loader) ? 'loading' : ''}></div>
             <div className="row blogListOut">
             { Listdata.map((itm,k) => {
                 if(k === 0 || k === 1){
