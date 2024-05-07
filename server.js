@@ -11,9 +11,9 @@ const route = require('./routes/api');
 
 const PORT = process.env.PORT || 8080;
 
-// const MONGO_URL = 'mongodb+srv://nithinfurie17:711015Nith@1@cluster0.harnxzr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URL = 'mongodb+srv://nithinfurie17:711015Nith@1@cluster0.harnxzr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-mongoose.connect('mongodb://localhost/mern_1',{
+mongoose.connect(MONGO_URL || 'mongodb://localhost/mern_1',{
     useNewUrlParser : true,
     useUnifiedTopology : true
 });
