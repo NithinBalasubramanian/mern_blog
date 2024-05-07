@@ -6,6 +6,10 @@ const categoryBlog = require('../models/newCategoryBlog');
 const linkBlog = require('../models/linkBlog');
 const router = express.Router();
 
+router.get('/test',(req,res) => {
+    res.send("Server is running");
+});
+
 router.get('/',(req,res) => {
     testBlog.find({}).sort({createdOn:-1})
     .then((data) => { 
